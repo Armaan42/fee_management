@@ -5,6 +5,13 @@ The Notifications & Communication module automates all fee-related communication
 
 **Core Responsibility**: Automate parent communication regarding fees.
 
+### Real-World Analogy
+Think of this as the school's **Private Post Office**.
+- **The Letter**: The Bill, The Receipt, The Reminder.
+- **The Address**: Mobile Number, Email ID.
+- **The Postman**: The Notification Engine.
+In the old days, schools sent letters via post. Today, this module acts as the automated postmaster, ensuring the right message reaches the right person at the right time (and telling you if they opened it!).
+
 ## Purpose
 - **Due Reminders**: Automated reminders before and after due dates
 - **Payment Confirmations**: Instant confirmation on successful payment
