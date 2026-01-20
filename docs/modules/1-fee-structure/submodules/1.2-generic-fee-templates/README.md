@@ -76,12 +76,12 @@ This submodule allows administrators to create fee templates that define the com
    - Preview fee breakdown
 
 ## Business Rules
-- ✅ Template names must be unique within an academic year
-- ✅ Must include at least one fee head
-- ✅ All mandatory fee heads must be included
-- ✅ Cannot delete templates assigned to students
-- ✅ Editing creates new version, old assignments unchanged
-- ✅ Total amount auto-calculated from fee heads
+- Template names must be unique within an academic year
+- Must include at least one fee head
+- All mandatory fee heads must be included
+- Cannot delete templates assigned to students
+- Editing creates new version, old assignments unchanged
+- Total amount auto-calculated from fee heads
 - ⚠️ Deactivating template prevents new assignments
 
 ## Validation Rules

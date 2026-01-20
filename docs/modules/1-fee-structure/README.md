@@ -230,27 +230,27 @@ Create installment plans:
 
 ## Key Features
 
-### ✅ Flexibility
+### Flexibility
 - Unlimited fee heads and templates
 - Customizable for any school structure
 - Supports complex fee scenarios
 
-### ✅ Automation
+### Automation
 - Template-based assignment reduces manual work
 - Rule-based concessions apply automatically
 - Auto-calculation of totals and installments
 
-### ✅ Accuracy
+### Accuracy
 - Centralized fee definitions prevent errors
 - Version control tracks all changes
 - Audit trail for compliance
 
-### ✅ Scalability
+### Scalability
 - Bulk operations for large student populations
 - Template reuse across academic years
 - Efficient management of thousands of students
 
-### ✅ Control
+### Control
 - Role-based permissions
 - Approval workflows for sensitive operations
 - Comprehensive audit logging

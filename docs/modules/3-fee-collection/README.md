@@ -312,31 +312,31 @@ Student withdraws mid-year:
 
 ## Key Features
 
-### ✅ Multi-Mode Support
+### Multi-Mode Support
 - Cash, Cheque, Card, UPI, Online
 - Mixed payment modes
 - Real-time processing
 - Gateway integration
 
-### ✅ Accuracy
+### Accuracy
 - Auto-calculation of dues
 - Duplicate detection
 - Validation checks
 - Audit trail
 
-### ✅ Speed
+### Speed
 - Quick student lookup
 - Instant receipt generation
 - Fast printing
 - Minimal clicks
 
-### ✅ Flexibility
+### Flexibility
 - Partial payments
 - Advance payments
 - Refund processing
 - Receipt reprints
 
-### ✅ Security
+### Security
 - Authorization for cancellations
 - Audit logging
 - Receipt numbering

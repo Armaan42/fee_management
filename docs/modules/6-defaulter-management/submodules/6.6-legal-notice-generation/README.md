@@ -22,8 +22,8 @@
    - Step 2
 
 ## Business Rules
-- ✅ Rule 1
-- ✅ Rule 2
+- Rule 1
+- Rule 2
 - ⚠️ Important consideration
 
 ## Validation Rules

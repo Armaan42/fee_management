@@ -209,31 +209,31 @@ Adjustment scenarios:
 
 ## Key Features
 
-### ✅ Automation
+### Automation
 - Automatic fine calculation and application
 - Rule-based exemptions
 - Scheduled processing
 - Notification triggers
 
-### ✅ Flexibility
+### Flexibility
 - Multiple calculation methods
 - Configurable grace periods
 - Exemption rules
 - Manual override capability
 
-### ✅ Fairness
+### Fairness
 - Transparent rules
 - Grace periods for all
 - Exemption for justified cases
 - Appeal mechanism through waivers
 
-### ✅ Control
+### Control
 - Approval workflows
 - Authorization levels
 - Audit trail for all changes
 - Maximum fine caps
 
-### ✅ Compliance
+### Compliance
 - Policy enforcement
 - Documentation requirements
 - Audit logs

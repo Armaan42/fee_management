@@ -85,11 +85,11 @@ This submodule allows administrators to define all types of fees that the school
    - Sort by various fields
 
 ## Business Rules
-- ✅ Fee head names must be unique
-- ✅ Cannot delete fee heads that are already assigned to students
-- ✅ Can only deactivate (not delete) fee heads in use
-- ✅ Deactivated fee heads remain in historical records
-- ✅ Mandatory fees cannot be removed from templates
+- Fee head names must be unique
+- Cannot delete fee heads that are already assigned to students
+- Can only deactivate (not delete) fee heads in use
+- Deactivated fee heads remain in historical records
+- Mandatory fees cannot be removed from templates
 - ⚠️ Editing fee head name affects all future assignments only
 
 ## Validation Rules
