@@ -5,6 +5,13 @@ The Audit & Compliance module maintains comprehensive audit trails for all fee-r
 
 **Core Responsibility**: Maintain complete audit trail and ensure regulatory compliance.
 
+### Real-World Analogy
+Think of this as an **Aircraft's Black Box**.
+- **The Flight**: The daily operations of the school.
+- **The Pilot**: The user (Principal/Accountant).
+- **The Black Box**: The Audit Module.
+It records every switch flipped, every button pressed, and every conversation. If the plane lands safely (audit cleared), no one looks at it. But if there is a crash (financial fraud), the investigators open the Black Box to replay exactly what happened, second by second.
+
 ## Purpose
 - **Transaction Logging**: Log all fee transactions
 - **Cancellation Tracking**: Track all receipt cancellations
