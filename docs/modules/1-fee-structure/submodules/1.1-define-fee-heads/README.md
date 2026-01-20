@@ -15,37 +15,37 @@ This submodule allows administrators to define all types of fees that the school
 
 ## Common Fee Heads Examples
 - **Academic Fees**
-  - Tuition Fee
-  - Admission Fee
-  - Registration Fee
-  - Examination Fee
-  - Library Fee
-  - Laboratory Fee
-  - Computer Lab Fee
-  - Activity Fee
+- Tuition Fee
+- Admission Fee
+- Registration Fee
+- Examination Fee
+- Library Fee
+- Laboratory Fee
+- Computer Lab Fee
+- Activity Fee
 
 - **Transport Fees**
-  - Bus Fee
-  - Van Fee
-  - Transport Maintenance
+- Bus Fee
+- Van Fee
+- Transport Maintenance
 
 - **Hostel Fees**
-  - Hostel Accommodation
-  - Hostel Mess Fee
-  - Hostel Security Deposit
+- Hostel Accommodation
+- Hostel Mess Fee
+- Hostel Security Deposit
 
 - **Extra-curricular Fees**
-  - Sports Fee
-  - Music Fee
-  - Art & Craft Fee
-  - Dance Fee
+- Sports Fee
+- Music Fee
+- Art & Craft Fee
+- Dance Fee
 
 - **Other Fees**
-  - Uniform Fee
-  - Books & Stationery
-  - ID Card Fee
-  - Medical Fee
-  - Insurance Fee
+- Uniform Fee
+- Books & Stationery
+- ID Card Fee
+- Medical Fee
+- Insurance Fee
 
 ## Data Fields
 | Field | Type | Required | Description |
@@ -60,29 +60,29 @@ This submodule allows administrators to define all types of fees that the school
 
 ## User Actions
 1. **Add Fee Head**
-   - Click "+ Add Fee Head" button
-   - Fill in fee head details
-   - Select category
-   - Mark as mandatory/optional
-   - Save
+- Click "+ Add Fee Head" button
+- Fill in fee head details
+- Select category
+- Mark as mandatory/optional
+- Save
 
 2. **Edit Fee Head**
-   - Select existing fee head
-   - Modify details
-   - Save changes
-   - System logs modification history
+- Select existing fee head
+- Modify details
+- Save changes
+- System logs modification history
 
 3. **Deactivate Fee Head**
-   - Select fee head
-   - Toggle "Is Active" status
-   - Confirm action
-   - Fee head becomes unavailable for new assignments
+- Select fee head
+- Toggle "Is Active" status
+- Confirm action
+- Fee head becomes unavailable for new assignments
 
 4. **View Fee Heads**
-   - View all fee heads in table format
-   - Filter by category
-   - Search by name
-   - Sort by various fields
+- View all fee heads in table format
+- Filter by category
+- Search by name
+- Sort by various fields
 
 ## Business Rules
 - Fee head names must be unique
@@ -90,7 +90,7 @@ This submodule allows administrators to define all types of fees that the school
 - Can only deactivate (not delete) fee heads in use
 - Deactivated fee heads remain in historical records
 - Mandatory fees cannot be removed from templates
-- ⚠️ Editing fee head name affects all future assignments only
+- Editing fee head name affects all future assignments only
 
 ## Validation Rules
 - Fee head name: Required, 3-100 characters
@@ -111,12 +111,12 @@ This submodule allows administrators to define all types of fees that the school
 
 ## API Endpoints
 ```
-POST   /api/fee-heads              - Create new fee head
-GET    /api/fee-heads              - List all fee heads
-GET    /api/fee-heads/:id          - Get specific fee head
-PUT    /api/fee-heads/:id          - Update fee head
-PATCH  /api/fee-heads/:id/status   - Activate/Deactivate
-DELETE /api/fee-heads/:id          - Delete (if not in use)
+POST /api/fee-heads - Create new fee head
+GET /api/fee-heads - List all fee heads
+GET /api/fee-heads/:id - Get specific fee head
+PUT /api/fee-heads/:id - Update fee head
+PATCH /api/fee-heads/:id/status - Activate/Deactivate
+DELETE /api/fee-heads/:id - Delete (if not in use)
 ```
 
 ## Database Schema

@@ -1,6 +1,6 @@
 # Fee Management System Documentation
 
-## 📋 Project Overview
+## Project Overview
 
 Complete documentation structure for a comprehensive School ERP Fee Management System (Admin Side).
 
@@ -16,29 +16,29 @@ Complete documentation structure for a comprehensive School ERP Fee Management S
 
 ```
 docs/
-└── modules/
-    ├── README.md (Overview of all modules)
-    ├── 1-fee-structure/
-    │   ├── README.md
-    │   └── submodules/
-    │       ├── 1.1-define-fee-heads/README.md
-    │       ├── 1.2-generic-fee-templates/README.md
-    │       ├── 1.3-student-fee-assignment/README.md
-    │       ├── 1.4-concession-configuration/README.md
-    │       ├── 1.5-optional-fee-setup/README.md
-    │       └── 1.6-fee-installment-plans/README.md
-    ├── 2-fine-penalty/ (5 submodules)
-    ├── 3-fee-collection/ (8 submodules)
-    ├── 4-payment-gateway/ (5 submodules)
-    ├── 5-reconciliation/ (6 submodules)
-    ├── 6-defaulter-management/ (6 submodules)
-    ├── 7-reports-analytics/ (8 submodules)
-    ├── 8-audit-compliance/ (6 submodules)
-    ├── 9-notifications/ (7 submodules)
-    └── 10-utilities/ (8 submodules)
+modules/
+README.md (Overview of all modules)
+1-fee-structure/
+README.md
+submodules/
+1.1-define-fee-heads/README.md
+1.2-generic-fee-templates/README.md
+1.3-student-fee-assignment/README.md
+1.4-concession-configuration/README.md
+1.5-optional-fee-setup/README.md
+1.6-fee-installment-plans/README.md
+2-fine-penalty/ (5 submodules)
+3-fee-collection/ (8 submodules)
+4-payment-gateway/ (5 submodules)
+5-reconciliation/ (6 submodules)
+6-defaulter-management/ (6 submodules)
+7-reports-analytics/ (8 submodules)
+8-audit-compliance/ (6 submodules)
+9-notifications/ (7 submodules)
+10-utilities/ (8 submodules)
 ```
 
-## 📚 Module Summary
+## Module Summary
 
 | # | Module Name | Submodules | Purpose |
 |---|-------------|------------|---------|
@@ -53,7 +53,7 @@ docs/
 | 9 | Notifications & Communication | 7 | Automate parent communication |
 | 10 | Utilities & Administration | 8 | System configuration and bulk operations |
 
-## 📖 README Template Structure
+## README Template Structure
 
 Each submodule README includes:
 
@@ -71,13 +71,13 @@ Each submodule README includes:
 12. **UI/UX Considerations** - Interface guidelines
 13. **Best Practices** - Implementation recommendations
 
-## 🛠️ Tools Created
+## Tools Created
 
 - **generate_docs.py** - Python script that automatically generated all 72 README files
 - **DIRECTORY_STRUCTURE.md** - Visual representation of the complete folder hierarchy
 - **README.md** - Main project overview (this file)
 
-## 📂 Key Files
+## Key Files
 
 | File | Location | Purpose |
 |------|----------|---------|
@@ -158,12 +158,12 @@ Each submodule README includes:
 5. **Implementation** - Begin code development
 6. **Testing** - Define test strategies
 
-## 📞 Support
+## Support
 
 For questions or clarifications about any module or submodule, refer to the specific README file in the corresponding folder.
 
 ---
 
-**Total Documentation Files**: 72 README files  
-**Coverage**: 100% of all modules and submodules  
+**Total Documentation Files**: 72 README files 
+**Coverage**: 100% of all modules and submodules 
 **Status**: Complete structure ready for enhancement

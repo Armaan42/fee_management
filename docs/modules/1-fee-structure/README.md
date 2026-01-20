@@ -194,28 +194,28 @@ Create installment plans:
 ### Phase 1: Setup (Before Academic Year Starts)
 ```
 1. Define Fee Heads
-   ↓
+↓
 2. Create Generic Templates
-   ↓
+↓
 3. Configure Concession Rules
-   ↓
+↓
 4. Set Up Optional Fees
-   ↓
+↓
 5. Define Installment Plans
 ```
 
 ### Phase 2: Assignment (During Student Enrollment)
 ```
 1. Student Enrolls
-   ↓
+↓
 2. System Assigns Appropriate Template (based on class/section/stream)
-   ↓
+↓
 3. Check Concession Eligibility → Apply if eligible
-   ↓
+↓
 4. Add Optional Fees (if requested by parent)
-   ↓
+↓
 5. Assign Installment Plan
-   ↓
+↓
 6. Generate Fee Structure for Student
 ```
 
@@ -297,31 +297,31 @@ Create installment plans:
 ## Data Flow Diagram
 
 ```
-┌─────────────────────────────────────────────────────────────┐
-│                    EXTERNAL SYSTEMS                          │
-│  Student Management │ Academic Year │ Parent Portal          │
-└──────────┬──────────┴───────┬───────┴──────────┬────────────┘
-           │                  │                   │
-           ▼                  ▼                   ▼
-┌─────────────────────────────────────────────────────────────┐
-│              MODULE 1: FEE STRUCTURE SETUP                   │
-│                                                              │
-│  ┌──────────┐  ┌──────────┐  ┌──────────┐  ┌──────────┐   │
-│  │ Fee Heads│→ │Templates │→ │Assignment│→ │Concession│   │
-│  └──────────┘  └──────────┘  └──────────┘  └──────────┘   │
-│       ↓             ↓              ↓             ↓          │
-│  ┌──────────┐  ┌──────────┐                                │
-│  │Optional  │  │Installment│                                │
-│  │  Fees    │  │  Plans   │                                │
-│  └──────────┘  └──────────┘                                │
-└──────────┬──────────┬──────────┬──────────┬────────────────┘
-           │          │          │          │
-           ▼          ▼          ▼          ▼
-┌──────────────────────────────────────────────────────────────┐
-│                    INTERNAL MODULES                           │
-│  Module 2  │  Module 3  │  Module 6  │  Module 7  │ Module 8 │
-│  (Fine)    │(Collection)│(Defaulter) │ (Reports)  │ (Audit)  │
-└──────────────────────────────────────────────────────────────┘
+
+EXTERNAL SYSTEMS 
+Student Management Academic Year Parent Portal 
+
+
+
+
+MODULE 1: FEE STRUCTURE SETUP 
+
+
+Fee Heads→ Templates → Assignment→ Concession 
+
+↓ ↓ ↓ ↓ 
+
+Optional Installment 
+Fees Plans 
+
+
+
+
+
+INTERNAL MODULES 
+Module 2 Module 3 Module 6 Module 7 Module 8 
+(Fine) (Collection)(Defaulter) (Reports) (Audit) 
+
 ```
 
 ## Related Modules

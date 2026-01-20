@@ -56,7 +56,7 @@ System configuration and bulk operations
 Each module folder contains:
 - `README.md` - Module overview and workflow
 - `submodules/` - Individual submodule documentation
-  - Each submodule has its own `README.md` with detailed specifications
+- Each submodule has its own `README.md` with detailed specifications
 
 ## How to Use This Documentation
 1. Start with the main module README to understand the overall purpose

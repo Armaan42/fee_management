@@ -271,42 +271,42 @@ Student withdraws mid-year:
 ### Daily Collection Process
 ```
 1. Student/Parent Arrives at Counter
-   ↓
+↓
 2. Staff Searches Student
-   ↓
+↓
 3. System Displays Outstanding Dues
-   ↓
+↓
 4. Accept Payment (Cash/Card/Cheque/UPI)
-   ↓
+↓
 5. Validate Amount
-   ↓
+↓
 6. Generate Receipt
-   ↓
+↓
 7. Print and Hand Over
-   ↓
+↓
 8. Send SMS/Email Confirmation
-   ↓
+↓
 9. Update Accounting System
 ```
 
 ### Online Payment Flow
 ```
 1. Parent Logs into Portal
-   ↓
+↓
 2. Views Fee Dues
-   ↓
+↓
 3. Initiates Payment
-   ↓
+↓
 4. Redirected to Gateway
-   ↓
+↓
 5. Completes Payment
-   ↓
+↓
 6. Gateway Confirms
-   ↓
+↓
 7. System Generates Receipt
-   ↓
+↓
 8. Email Receipt to Parent
-   ↓
+↓
 9. Update Payment Status
 ```
 

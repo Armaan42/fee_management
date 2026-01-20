@@ -165,45 +165,45 @@ Adjustment scenarios:
 ### Phase 1: Configuration (Before Academic Year)
 ```
 1. Define Fine Rules
-   ↓
+↓
 2. Set Grace Periods
-   ↓
+↓
 3. Configure Exemption Rules
-   ↓
+↓
 4. Setup Approval Workflows
-   ↓
+↓
 5. Test with Sample Scenarios
 ```
 
 ### Phase 2: Automatic Processing (Daily)
 ```
 1. System Checks All Due Dates
-   ↓
+↓
 2. Identify Overdue Payments
-   ↓
+↓
 3. Check Grace Period Status
-   ↓
+↓
 4. Check Exemption Rules
-   ↓
+↓
 5. Calculate Fine Amount
-   ↓
+↓
 6. Apply Fine to Student Account
-   ↓
+↓
 7. Send Notification to Parent
 ```
 
 ### Phase 3: Manual Intervention (As Needed)
 ```
 1. Parent Requests Waiver
-   ↓
+↓
 2. Submit Documentation
-   ↓
+↓
 3. Route Through Approval Workflow
-   ↓
+↓
 4. Decision Made (Approve/Reject)
-   ↓
+↓
 5. Apply Adjustment if Approved
-   ↓
+↓
 6. Notify Parent of Decision
 ```
 
@@ -275,32 +275,32 @@ Adjustment scenarios:
 ## Data Flow Diagram
 
 ```
-┌─────────────────────────────────────────────────────────┐
-│              INBOUND DATA SOURCES                        │
-│  Module 1 (Fees) │ Module 3 (Payments) │ Module 6 (Dues)│
-└──────────┬───────┴──────────┬──────────┴────────┬───────┘
-           │                  │                    │
-           ▼                  ▼                    ▼
-┌──────────────────────────────────────────────────────────┐
-│         MODULE 2: FINE & PENALTY MANAGEMENT              │
-│                                                           │
-│  ┌──────────┐  ┌──────────┐  ┌──────────┐              │
-│  │Fine Rules│→ │Grace     │→ │Exemption │              │
-│  │          │  │Period    │  │Rules     │              │
-│  └──────────┘  └──────────┘  └──────────┘              │
-│       ↓             ↓              ↓                     │
-│  ┌──────────┐  ┌──────────┐                            │
-│  │  Waiver  │  │Adjustment│                            │
-│  │ Workflow │  │          │                            │
-│  └──────────┘  └──────────┘                            │
-└──────────┬──────────┬──────────┬──────────┬────────────┘
-           │          │          │          │
-           ▼          ▼          ▼          ▼
-┌──────────────────────────────────────────────────────────┐
-│                  OUTBOUND DESTINATIONS                    │
-│  Module 3  │  Module 7  │  Module 8  │  Module 9        │
-│(Collection)│  (Reports) │  (Audit)   │(Notifications)   │
-└──────────────────────────────────────────────────────────┘
+
+INBOUND DATA SOURCES 
+Module 1 (Fees) Module 3 (Payments) Module 6 (Dues)
+
+
+
+
+MODULE 2: FINE & PENALTY MANAGEMENT 
+
+
+Fine Rules→ Grace → Exemption 
+Period Rules 
+
+↓ ↓ ↓ 
+
+Waiver Adjustment 
+Workflow 
+
+
+
+
+
+OUTBOUND DESTINATIONS 
+Module 3 Module 7 Module 8 Module 9 
+(Collection) (Reports) (Audit) (Notifications) 
+
 ```
 
 ## Related Modules

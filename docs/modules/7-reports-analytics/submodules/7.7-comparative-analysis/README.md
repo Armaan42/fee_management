@@ -18,13 +18,13 @@
 
 ## User Actions
 1. **Action 1**
-   - Step 1
-   - Step 2
+- Step 1
+- Step 2
 
 ## Business Rules
 - Rule 1
 - Rule 2
-- ⚠️ Important consideration
+- Important consideration
 
 ## Validation Rules
 - Validation 1
@@ -41,8 +41,8 @@
 
 ## API Endpoints
 ```
-POST   /api/endpoint    - Description
-GET    /api/endpoint    - Description
+POST /api/endpoint - Description
+GET /api/endpoint - Description
 ```
 
 ## Database Schema

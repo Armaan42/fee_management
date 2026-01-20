@@ -43,37 +43,37 @@ This submodule allows administrators to create fee templates that define the com
 
 ## User Actions
 1. **Create Template**
-   - Click "+ Create Template"
-   - Enter template details
-   - Add fee heads with amounts
-   - Set payment frequency for each head
-   - Review total amount
-   - Save template
+- Click "+ Create Template"
+- Enter template details
+- Add fee heads with amounts
+- Set payment frequency for each head
+- Review total amount
+- Save template
 
 2. **Duplicate Template**
-   - Select existing template
-   - Click "Duplicate"
-   - Modify name and details
-   - Adjust fee amounts as needed
-   - Save as new template
+- Select existing template
+- Click "Duplicate"
+- Modify name and details
+- Adjust fee amounts as needed
+- Save as new template
 
 3. **Edit Template**
-   - Select template
-   - Modify details or fee heads
-   - Save changes
-   - System creates new version
+- Select template
+- Modify details or fee heads
+- Save changes
+- System creates new version
 
 4. **Assign Template**
-   - Select template
-   - Choose target students/class
-   - Bulk assign to all students
-   - Confirm assignment
+- Select template
+- Choose target students/class
+- Bulk assign to all students
+- Confirm assignment
 
 5. **View Template**
-   - View all templates in grid/list
-   - Filter by class/section/year
-   - Search by name
-   - Preview fee breakdown
+- View all templates in grid/list
+- Filter by class/section/year
+- Search by name
+- Preview fee breakdown
 
 ## Business Rules
 - Template names must be unique within an academic year
@@ -82,7 +82,7 @@ This submodule allows administrators to create fee templates that define the com
 - Cannot delete templates assigned to students
 - Editing creates new version, old assignments unchanged
 - Total amount auto-calculated from fee heads
-- ⚠️ Deactivating template prevents new assignments
+- Deactivating template prevents new assignments
 
 ## Validation Rules
 - Template name: Required, 5-150 characters
@@ -97,13 +97,13 @@ This submodule allows administrators to create fee templates that define the com
 Total Annual Fee = Sum of all fee heads
 
 For Monthly fees:
-  Annual Amount = Monthly Amount × 12
+Annual Amount = Monthly Amount × 12
 
 For Quarterly fees:
-  Annual Amount = Quarterly Amount × 4
+Annual Amount = Quarterly Amount × 4
 
 For One-time fees:
-  Annual Amount = One-time Amount
+Annual Amount = One-time Amount
 ```
 
 ## Permissions Required
@@ -120,14 +120,14 @@ For One-time fees:
 
 ## API Endpoints
 ```
-POST   /api/fee-templates              - Create new template
-GET    /api/fee-templates              - List all templates
-GET    /api/fee-templates/:id          - Get specific template
-PUT    /api/fee-templates/:id          - Update template
-POST   /api/fee-templates/:id/duplicate - Duplicate template
-PATCH  /api/fee-templates/:id/status   - Activate/Deactivate
-DELETE /api/fee-templates/:id          - Delete (if not assigned)
-POST   /api/fee-templates/:id/assign   - Assign to students
+POST /api/fee-templates - Create new template
+GET /api/fee-templates - List all templates
+GET /api/fee-templates/:id - Get specific template
+PUT /api/fee-templates/:id - Update template
+POST /api/fee-templates/:id/duplicate - Duplicate template
+PATCH /api/fee-templates/:id/status - Activate/Deactivate
+DELETE /api/fee-templates/:id - Delete (if not assigned)
+POST /api/fee-templates/:id/assign - Assign to students
 ```
 
 ## Database Schema
@@ -175,16 +175,16 @@ Table: fee_template_details
 ## Example Templates
 ```
 Template: "Class 10 - Science Stream - 2024-25"
-├── Tuition Fee: ₹50,000 (Yearly)
-├── Laboratory Fee: ₹5,000 (Yearly)
-├── Library Fee: ₹2,000 (Yearly)
-├── Examination Fee: ₹3,000 (Yearly)
-├── Sports Fee: ₹1,500 (Yearly)
-└── Total: ₹61,500
+Tuition Fee: ₹50,000 (Yearly)
+Laboratory Fee: ₹5,000 (Yearly)
+Library Fee: ₹2,000 (Yearly)
+Examination Fee: ₹3,000 (Yearly)
+Sports Fee: ₹1,500 (Yearly)
+Total: ₹61,500
 
 Template: "Class 1 - General - 2024-25"
-├── Tuition Fee: ₹25,000 (Yearly)
-├── Activity Fee: ₹2,000 (Yearly)
-├── Library Fee: ₹1,000 (Yearly)
-└── Total: ₹28,000
+Tuition Fee: ₹25,000 (Yearly)
+Activity Fee: ₹2,000 (Yearly)
+Library Fee: ₹1,000 (Yearly)
+Total: ₹28,000
 ```
