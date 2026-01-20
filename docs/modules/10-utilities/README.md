@@ -5,6 +5,13 @@ The Utilities & Administration module provides system-wide configuration, bulk o
 
 **Core Responsibility**: System configuration and administrative operations.
 
+### Real-World Analogy
+Think of this as the school's **Swiss Army Knife / Toolbox**.
+- **The Hammer (Bulk Tools)**: For heavy lifting like assigning fees to 5000 students.
+- **The Screwdriver (Control Center)**: For fine-tuning settings like Tax ID or School Address.
+- **The First Aid Kit (Backup)**: For emergencies when things go wrong.
+While other modules handle the daily "What" (Transactions), this module handles the "How" (Configuration) and "How Much" (Volume).
+
 ## Purpose
 - **Control Center**: Central dashboard for system settings
 - **Year Rollover**: Transition to new academic year
