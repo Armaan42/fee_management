@@ -1,7 +1,8 @@
 # Module 2: Fine & Penalty Management
 
-## Overview
 The Fine & Penalty Management module automates the calculation, application, and management of late payment penalties. This module ensures that students who miss fee payment deadlines are charged appropriate fines according to school policies, while also providing mechanisms for exemptions and waivers in justified cases.
+
+**Real-World Analogy**: Think of this module as the "Traffic Police" of your school fees. It ensures everyone follows the rules (pays on time), gives a friendly warning (Grace Period), issues tickets (Fines) for violations, but also allows the "Judge" (Principal) to dismiss tickets for valid reasons (Waivers).
 
 **Core Responsibility**: Automate late fee penalties while maintaining fairness and flexibility.
 
