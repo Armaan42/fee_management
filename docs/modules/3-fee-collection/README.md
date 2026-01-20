@@ -5,6 +5,9 @@ The Fee Collection & Receipts module is the operational heart of the fee managem
 
 **Core Responsibility**: Process all fee payments and generate accurate receipts.
 
+### Real-World Analogy
+Think of this module as a **Supermarket Checkout System**. Just as a checkout counter accepts cash, cards, or digital wallets, calculates the total bill, handles coupons (concessions), and prints a detailed receipt, this module manages the entire "checkout" process for school fees. It ensures every penny collected is accounted for, whether it's a quick cash payment, a partial installment, or an online transfer.
+
 ## Purpose
 This module serves to:
 
