@@ -1,6 +1,6 @@
 # 1.1 Define Fee Heads
 
-## What This Does (Plain English)
+## Overview
 
 Think of fee heads as labels or categories for different types of money the school collects from students. Just like a grocery store has different categories (vegetables, dairy, snacks), a school has different fee categories (tuition, transport, library). This module lets you create and manage these categories.
 
