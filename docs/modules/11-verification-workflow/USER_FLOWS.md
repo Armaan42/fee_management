@@ -469,7 +469,7 @@ sequenceDiagram
     DB-->>API: Return Record ID: FS-2024-001
     
     rect rgb(255, 250, 240)
-        Note over DB: Record State: PENDING_APPROVAL; Visibility: Hidden from billing engine; Editable: No (locked for integrity)
+        Note over DB: Record State: PENDING_APPROVAL, Visibility: Hidden from billing engine, Editable: No (locked for integrity)
     end
     
     API->>Queue: Add Item to Approval Queue (Type: FEE_STRUCTURE, ID: FS-2024-001)
@@ -503,7 +503,7 @@ sequenceDiagram
     API-->>UI: Return Comparison Data
     
     rect rgb(240, 248, 255)
-        Note over UI: Display Comparison View:; - Proposed Values: Grade 10, Tuition $5000; - Created By: John Doe (Accountant); - Created At: 2024-01-15 10:30 AM; - Supporting Documents: 0 attachments; - Change Justification: "Annual Fee Revision"
+        Note over UI: Display Comparison View:, - Proposed Values: Grade 10, Tuition $5000, - Created By: John Doe (Accountant), - Created At: 2024-01-15 10:30 AM, - Supporting Documents: 0 attachments, - Change Justification: "Annual Fee Revision"
     end
     
     UI-->>Checker: Show "Approve" and "Reject" Buttons
@@ -519,7 +519,7 @@ sequenceDiagram
     API->>DB: COMMIT TRANSACTION
     
     rect rgb(240, 255, 240)
-        Note over DB: Record State: ACTIVE; Visibility: Now visible to billing engine; Effective: Can be used for student fee assignment
+        Note over DB: Record State: ACTIVE, Visibility: Now visible to billing engine, Effective: Can be used for student fee assignment
     end
     
     API->>Queue: Remove Item FS-2024-001 from Queue
@@ -590,7 +590,7 @@ sequenceDiagram
     Maker->>UI: Enter Reason: "Medical Emergency"
     
     rect rgb(255, 240, 240)
-        Note over Maker: MISTAKE: Clerk forgets to attach; the required Medical Certificate document
+        Note over Maker: MISTAKE: Clerk forgets to attach, the required Medical Certificate document
     end
     
     Maker->>UI: Click "Submit for Approval" (without attachment)
@@ -620,7 +620,7 @@ sequenceDiagram
     API-->>UI: Return Waiver Data
     
     rect rgb(255, 245, 245)
-        Note over UI: Principal's Review Screen Shows:; - Student: STU-2024-1234 (Sarah Johnson); - Amount: $50; - Reason: "Medical Emergency"; - Attachments: NONE (0 files); - Policy Requirement: Medical waivers require proof
+        Note over UI: Principal's Review Screen Shows:, - Student: STU-2024-1234 (Sarah Johnson), - Amount: $50, - Reason: "Medical Emergency", - Attachments: NONE (0 files), - Policy Requirement: Medical waivers require proof
     end
     
     Checker->>UI: Identify Missing Documentation
@@ -668,7 +668,7 @@ sequenceDiagram
     API-->>UI: Return Editable Form + Comment Thread
     
     rect rgb(255, 250, 240)
-        Note over UI: Clerk Sees:; - Original Submission (Read-Only); - Principal's Comment (Highlighted); - Attachment Upload Section (Enabled); - "Resubmit" Button
+        Note over UI: Clerk Sees:, - Original Submission (Read-Only), - Principal's Comment (Highlighted), - Attachment Upload Section (Enabled), - "Resubmit" Button
     end
     
     UI-->>Maker: Display Form with Principal's Feedback
@@ -713,7 +713,7 @@ sequenceDiagram
     API-->>UI: Return Complete Data
     
     rect rgb(240, 255, 240)
-        Note over UI: Principal Now Sees:; - Attachments: 1 file (Medical_Certificate_Sarah_Johnson.pdf); - History: Original submission → Rejected → Resubmitted; - Document Preview Available
+        Note over UI: Principal Now Sees:, - Attachments: 1 file (Medical_Certificate_Sarah_Johnson.pdf), - History: Original submission → Rejected → Resubmitted, - Document Preview Available
     end
     
     UI-->>Checker: Display Updated Request with Attachment
@@ -806,7 +806,7 @@ sequenceDiagram
     UI->>API: POST /api/fine-waivers (Amount: $5.00, Reason: "Rounding error")
     
     rect rgb(240, 248, 255)
-        Note over API: API does NOT immediately save to DB.; First, it queries the Rules Engine to; determine if approval is required.
+        Note over API: API does NOT immediately save to DB., First, it queries the Rules Engine to, determine if approval is required.
     end
     
     API->>Rules: Evaluate Request Against Auto-Approval Rules
@@ -814,7 +814,7 @@ sequenceDiagram
     Rules->>Rules: Load Active Rules for Entity Type: FINE_WAIVER
     
     rect rgb(255, 250, 240)
-        Note over Rules: Rule Engine Finds:; Rule ID: AR-001; Condition: amount < 10.00; Action: AUTO_APPROVE; Created By: System Administrator; Effective Date: 2024-01-01
+        Note over Rules: Rule Engine Finds:, Rule ID: AR-001, Condition: amount < 10.00, Action: AUTO_APPROVE, Created By: System Administrator, Effective Date: 2024-01-01
     end
     
     Rules->>Rules: Evaluate: $5.00 < $10.00 → TRUE
@@ -828,7 +828,7 @@ sequenceDiagram
     API->>DB: COMMIT TRANSACTION
     
     rect rgb(240, 255, 240)
-        Note over DB: Record State: APPROVED (immediately); Approved By: SYSTEM (Rule AR-001); No human intervention required
+        Note over DB: Record State: APPROVED (immediately), Approved By: SYSTEM (Rule AR-001), No human intervention required
     end
     
     API->>Audit: Log Auto-Approval Event
@@ -858,7 +858,7 @@ sequenceDiagram
     Rules->>Rules: Evaluate: $150.00 < $10.00 → FALSE
     
     rect rgb(255, 245, 245)
-        Note over Rules: No Auto-Approval Rule Matches.; Request requires human review.
+        Note over Rules: No Auto-Approval Rule Matches., Request requires human review.
     end
     
     Rules-->>API: Decision: REQUIRES_MANUAL_APPROVAL (No matching rule)
