@@ -29,23 +29,23 @@ flowchart TD
     FeeList --> ClickNew[Click 'Create New Structure' Button]
     ClickNew --> FormScreen[Fee Structure Form Screen]
     
-    FormScreen --> FillForm[Fill Form Fields: | - Grade: 10 | - Tuition: $5000 | - Lab Fee: $500]
+    FormScreen --> FillForm[Fill Form Fields:; - Grade: 10; - Tuition: $5000; - Lab Fee: $500]
     FillForm --> ValidateForm{Form Validation}
     
-    ValidateForm -->|Invalid| ShowErrors[Show Inline Error Messages | Red borders on invalid fields]
+    ValidateForm -->|Invalid| ShowErrors[Show Inline Error Messages; Red borders on invalid fields]
     ShowErrors --> FormScreen
     
-    ValidateForm -->|Valid| EnableSubmit[Enable 'Submit for Approval' Button | Button changes from gray to blue]
+    ValidateForm -->|Valid| EnableSubmit[Enable 'Submit for Approval' Button; Button changes from gray to blue]
     
     EnableSubmit --> ClickSubmit[User Clicks 'Submit for Approval']
-    ClickSubmit --> LoadingState[Loading Spinner Overlay | 'Submitting...']
+    ClickSubmit --> LoadingState[Loading Spinner Overlay; 'Submitting...']
     
-    LoadingState --> SuccessModal[Success Modal Dialog: | 'Fee Structure Submitted' | Tracking ID: FS-2024-001 | Status: Pending Approval]
+    LoadingState --> SuccessModal[Success Modal Dialog:; 'Fee Structure Submitted'; Tracking ID: FS-2024-001; Status: Pending Approval]
     
     SuccessModal --> ClickOK[User Clicks 'OK']
-    ClickOK --> UpdatedList[Return to Fee Structure List | New item shows with: | - Yellow 'Pending' badge | - Clock icon | - Disabled 'Edit' button]
+    ClickOK --> UpdatedList[Return to Fee Structure List; New item shows with:; - Yellow 'Pending' badge; - Clock icon; - Disabled 'Edit' button]
     
-    UpdatedList --> NotifBell[Notification Bell Icon | Shows green dot]
+    UpdatedList --> NotifBell[Notification Bell Icon; Shows green dot]
     NotifBell --> End([User Continues Work])
     
     style FormScreen fill:#e3f2fd
@@ -87,50 +87,50 @@ flowchart TD
 
 ```mermaid
 flowchart TD
-    Start([Principal Logs In]) --> Dashboard[Dashboard Screen | Badge shows '3 Pending Approvals']
+    Start([Principal Logs In]) --> Dashboard[Dashboard Screen; Badge shows '3 Pending Approvals']
     
-    Dashboard --> ClickBadge[Click Notification Badge | or 'Approvals' Menu Item]
-    ClickBadge --> QueueScreen[Approval Queue Screen | Table with 3 items]
+    Dashboard --> ClickBadge[Click Notification Badge; or 'Approvals' Menu Item]
+    ClickBadge --> QueueScreen[Approval Queue Screen; Table with 3 items]
     
-    QueueScreen --> ViewTable[Table Columns: | - ID | - Type | - Submitted By | - Date | - Priority | - Actions]
+    QueueScreen --> ViewTable[Table Columns:; - ID; - Type; - Submitted By; - Date; - Priority; - Actions]
     
     ViewTable --> ClickRow[Click on Row: FS-2024-001]
-    ClickRow --> DetailPanel[Slide-in Detail Panel | Right side of screen]
+    ClickRow --> DetailPanel[Slide-in Detail Panel; Right side of screen]
     
-    DetailPanel --> ShowDetails[Display: | - Comparison View | - Old vs New Values | - Audit Trail | - Comments Section | - Action Buttons]
+    DetailPanel --> ShowDetails[Display:; - Comparison View; - Old vs New Values; - Audit Trail; - Comments Section; - Action Buttons]
     
     ShowDetails --> ReviewData{Principal Reviews Data}
     
     ReviewData -->|Needs Clarification| ClickComment[Click 'Add Comment' Button]
-    ClickComment --> TypeComment[Text Area Expands | Type question]
+    ClickComment --> TypeComment[Text Area Expands; Type question]
     TypeComment --> SendComment[Click 'Send Comment']
-    SendComment --> CommentSent[Comment Added to Thread | Maker receives notification]
+    SendComment --> CommentSent[Comment Added to Thread; Maker receives notification]
     CommentSent --> QueueScreen
     
-    ReviewData -->|Data Looks Good| ClickApprove[Click 'Approve' Button | Green button]
+    ReviewData -->|Data Looks Good| ClickApprove[Click 'Approve' Button; Green button]
     
-    ClickApprove --> ConfirmDialog[Confirmation Dialog: | 'Approve Fee Structure FS-2024-001?' | Warning: This action cannot be undone]
+    ClickApprove --> ConfirmDialog[Confirmation Dialog:; 'Approve Fee Structure FS-2024-001?'; Warning: This action cannot be undone]
     
     ConfirmDialog --> ClickCancel[Click 'Cancel']
     ClickCancel --> DetailPanel
     
     ConfirmDialog --> ClickConfirm[Click 'Confirm Approval']
-    ClickConfirm --> ProcessingState[Loading Spinner | 'Processing approval...']
+    ClickConfirm --> ProcessingState[Loading Spinner; 'Processing approval...']
     
-    ProcessingState --> SuccessToast[Success Toast Notification: | 'Fee Structure Approved' | Green banner at top]
+    ProcessingState --> SuccessToast[Success Toast Notification:; 'Fee Structure Approved'; Green banner at top]
     
-    SuccessToast --> UpdateQueue[Queue Screen Updates: | - Item removed from list | - Badge count: 3 → 2 | - Smooth fade-out animation]
+    SuccessToast --> UpdateQueue[Queue Screen Updates:; - Item removed from list; - Badge count: 3 → 2; - Smooth fade-out animation]
     
     UpdateQueue --> End([Principal Continues Work])
     
-    ReviewData -->|Data Has Issues| ClickReject[Click 'Reject' Button | Red button]
-    ClickReject --> RejectDialog[Rejection Dialog: | Required: Reason for rejection | Text area for comments]
+    ReviewData -->|Data Has Issues| ClickReject[Click 'Reject' Button; Red button]
+    ClickReject --> RejectDialog[Rejection Dialog:; Required: Reason for rejection; Text area for comments]
     
-    RejectDialog --> TypeReason[Principal Types: | 'Please verify amounts | against policy document']
+    RejectDialog --> TypeReason[Principal Types:; 'Please verify amounts; against policy document']
     TypeReason --> ClickRejectConfirm[Click 'Confirm Rejection']
-    ClickRejectConfirm --> RejectProcessing[Loading Spinner | 'Processing rejection...']
+    ClickRejectConfirm --> RejectProcessing[Loading Spinner; 'Processing rejection...']
     
-    RejectProcessing --> RejectToast[Warning Toast: | 'Request Rejected and Returned' | Orange banner]
+    RejectProcessing --> RejectToast[Warning Toast:; 'Request Rejected and Returned'; Orange banner]
     
     RejectToast --> UpdateQueue
     
@@ -177,43 +177,43 @@ flowchart TD
 flowchart TD
     Start([Clerk Logs In]) --> Dashboard[Dashboard Screen]
     
-    Dashboard --> AlertBanner[Red Alert Banner at Top: | '1 Request Returned for Correction' | Click to view]
+    Dashboard --> AlertBanner[Red Alert Banner at Top:; '1 Request Returned for Correction'; Click to view]
     
     AlertBanner --> ClickAlert[Click Alert Banner]
-    ClickAlert --> ReturnedList[My Submissions Screen | Filter: 'Returned Items']
+    ClickAlert --> ReturnedList[My Submissions Screen; Filter: 'Returned Items']
     
-    ReturnedList --> ShowItem[Item Card: | FW-2024-042 | Red 'Returned' badge | Principal's comment preview]
+    ReturnedList --> ShowItem[Item Card:; FW-2024-042; Red 'Returned' badge; Principal's comment preview]
     
     ShowItem --> ClickItem[Click on Item Card]
-    ClickItem --> DetailScreen[Request Detail Screen | Read-only mode]
+    ClickItem --> DetailScreen[Request Detail Screen; Read-only mode]
     
-    DetailScreen --> ShowComment[Comment Thread Visible: | Principal: 'Missing Medical Cert' | Highlighted in yellow box]
+    DetailScreen --> ShowComment[Comment Thread Visible:; Principal: 'Missing Medical Cert'; Highlighted in yellow box]
     
     ShowComment --> ClickEdit[Click 'Edit & Resubmit' Button]
-    ClickEdit --> EditMode[Form Switches to Edit Mode | Only certain fields editable]
+    ClickEdit --> EditMode[Form Switches to Edit Mode; Only certain fields editable]
     
-    EditMode --> ShowUpload[Upload Section Highlighted: | 'Attachments Required' | Pulsing blue border]
+    EditMode --> ShowUpload[Upload Section Highlighted:; 'Attachments Required'; Pulsing blue border]
     
     ShowUpload --> ClickUpload[Click 'Upload Document' Button]
     ClickUpload --> FileDialog[System File Picker Opens]
     
-    FileDialog --> SelectFile[User Selects: | Medical_Certificate.pdf]
-    SelectFile --> UploadProgress[Progress Bar: | 0% → 100% | 'Uploading...']
+    FileDialog --> SelectFile[User Selects:; Medical_Certificate.pdf]
+    SelectFile --> UploadProgress[Progress Bar:; 0% → 100%; 'Uploading...']
     
-    UploadProgress --> FilePreview[File Preview Card: | - Thumbnail icon | - Filename | - Size: 250 KB | - Remove button]
+    UploadProgress --> FilePreview[File Preview Card:; - Thumbnail icon; - Filename; - Size: 250 KB; - Remove button]
     
-    FilePreview --> EnableResubmit[Resubmit Button Enabled | Changes from gray to blue]
+    FilePreview --> EnableResubmit[Resubmit Button Enabled; Changes from gray to blue]
     
     EnableResubmit --> ClickResubmit[Click 'Resubmit for Approval']
-    ClickResubmit --> ConfirmResubmit[Confirmation Modal: | 'Ready to resubmit?' | Shows what changed]
+    ClickResubmit --> ConfirmResubmit[Confirmation Modal:; 'Ready to resubmit?'; Shows what changed]
     
     ConfirmResubmit --> ClickConfirm[Click 'Yes, Resubmit']
-    ClickConfirm --> LoadingState[Loading Overlay | 'Resubmitting...']
+    ClickConfirm --> LoadingState[Loading Overlay; 'Resubmitting...']
     
-    LoadingState --> SuccessModal[Success Modal: | 'Request Resubmitted' | New status: Pending Review | Priority: High]
+    LoadingState --> SuccessModal[Success Modal:; 'Request Resubmitted'; New status: Pending Review; Priority: High]
     
     SuccessModal --> ClickOK[Click 'OK']
-    ClickOK --> UpdatedStatus[Return to My Submissions | Item now shows: | - Yellow 'Pending' badge | - 'Resubmitted' tag | - Updated timestamp]
+    ClickOK --> UpdatedStatus[Return to My Submissions; Item now shows:; - Yellow 'Pending' badge; - 'Resubmitted' tag; - Updated timestamp]
     
     UpdatedStatus --> End([Clerk Continues Work])
     
@@ -263,23 +263,23 @@ flowchart TD
     Start([User Opens Waiver Form]) --> FormScreen[Fine Waiver Form]
     
     FormScreen --> EnterAmount[Enter Amount: $5.00]
-    EnterAmount --> ShowHint[Helper Text Appears: | 'Amounts under $10 are | auto-approved instantly']
+    EnterAmount --> ShowHint[Helper Text Appears:; 'Amounts under $10 are; auto-approved instantly']
     
-    ShowHint --> EnterReason[Enter Reason: | 'Rounding error']
+    ShowHint --> EnterReason[Enter Reason:; 'Rounding error']
     EnterReason --> ClickSubmit[Click 'Submit' Button]
     
-    ClickSubmit --> QuickProcess[Brief Loading: | 0.5 seconds | Spinner]
+    ClickSubmit --> QuickProcess[Brief Loading:; 0.5 seconds; Spinner]
     
-    QuickProcess --> InstantSuccess[Success Animation: | Green checkmark | Confetti effect]
+    QuickProcess --> InstantSuccess[Success Animation:; Green checkmark; Confetti effect]
     
-    InstantSuccess --> SuccessBanner[Success Banner: | 'Waiver Approved Instantly' | 'No manual review required' | Rule: Auto-approval policy]
+    InstantSuccess --> SuccessBanner[Success Banner:; 'Waiver Approved Instantly'; 'No manual review required'; Rule: Auto-approval policy]
     
-    SuccessBanner --> ShowReceipt[Receipt Summary: | - Waiver ID | - Amount: $5.00 | - Status: Approved | - Approved by: System | - Download PDF button]
+    SuccessBanner --> ShowReceipt[Receipt Summary:; - Waiver ID; - Amount: $5.00; - Status: Approved; - Approved by: System; - Download PDF button]
     
     ShowReceipt --> UserChoice{User Action}
     
     UserChoice -->|Download| ClickDownload[Click 'Download Receipt']
-    ClickDownload --> PDFDownload[PDF Downloads | Browser notification]
+    ClickDownload --> PDFDownload[PDF Downloads; Browser notification]
     PDFDownload --> End([User Continues])
     
     UserChoice -->|New Request| ClickNew[Click 'Create Another']
@@ -290,16 +290,16 @@ flowchart TD
     
     Start --> FormScreen2[Fine Waiver Form]
     FormScreen2 --> EnterLarge[Enter Amount: $150.00]
-    EnterLarge --> ShowWarning[Warning Text Appears: | 'This amount requires | Principal approval' | Orange info icon]
+    EnterLarge --> ShowWarning[Warning Text Appears:; 'This amount requires; Principal approval'; Orange info icon]
     
-    ShowWarning --> EnterReason2[Enter Reason: | 'Financial hardship']
+    ShowWarning --> EnterReason2[Enter Reason:; 'Financial hardship']
     EnterReason2 --> ClickSubmit2[Click 'Submit' Button]
     
-    ClickSubmit2 --> NormalProcess[Standard Loading: | 2 seconds | Spinner]
+    ClickSubmit2 --> NormalProcess[Standard Loading:; 2 seconds; Spinner]
     
-    NormalProcess --> PendingBanner[Info Banner: | 'Request Submitted' | 'Awaiting Principal Approval' | Blue background]
+    NormalProcess --> PendingBanner[Info Banner:; 'Request Submitted'; 'Awaiting Principal Approval'; Blue background]
     
-    PendingBanner --> ShowTracking[Tracking Information: | - Request ID | - Estimated review time: 24h | - Status: Pending | - You'll be notified]
+    PendingBanner --> ShowTracking[Tracking Information:; - Request ID; - Estimated review time: 24h; - Status: Pending; - You'll be notified]
     
     ShowTracking --> End
     
@@ -469,7 +469,7 @@ sequenceDiagram
     DB-->>API: Return Record ID: FS-2024-001
     
     rect rgb(255, 250, 240)
-        Note over DB: Record State: PENDING_APPROVAL | Visibility: Hidden from billing engine | Editable: No (locked for integrity)
+        Note over DB: Record State: PENDING_APPROVAL; Visibility: Hidden from billing engine; Editable: No (locked for integrity)
     end
     
     API->>Queue: Add Item to Approval Queue (Type: FEE_STRUCTURE, ID: FS-2024-001)
@@ -503,7 +503,7 @@ sequenceDiagram
     API-->>UI: Return Comparison Data
     
     rect rgb(240, 248, 255)
-        Note over UI: Display Comparison View: | - Proposed Values: Grade 10, Tuition $5000 | - Created By: John Doe (Accountant) | - Created At: 2024-01-15 10:30 AM | - Supporting Documents: 0 attachments | - Change Justification: "Annual Fee Revision"
+        Note over UI: Display Comparison View:; - Proposed Values: Grade 10, Tuition $5000; - Created By: John Doe (Accountant); - Created At: 2024-01-15 10:30 AM; - Supporting Documents: 0 attachments; - Change Justification: "Annual Fee Revision"
     end
     
     UI-->>Checker: Show "Approve" and "Reject" Buttons
@@ -519,7 +519,7 @@ sequenceDiagram
     API->>DB: COMMIT TRANSACTION
     
     rect rgb(240, 255, 240)
-        Note over DB: Record State: ACTIVE | Visibility: Now visible to billing engine | Effective: Can be used for student fee assignment
+        Note over DB: Record State: ACTIVE; Visibility: Now visible to billing engine; Effective: Can be used for student fee assignment
     end
     
     API->>Queue: Remove Item FS-2024-001 from Queue
@@ -590,7 +590,7 @@ sequenceDiagram
     Maker->>UI: Enter Reason: "Medical Emergency"
     
     rect rgb(255, 240, 240)
-        Note over Maker: MISTAKE: Clerk forgets to attach | the required Medical Certificate document
+        Note over Maker: MISTAKE: Clerk forgets to attach; the required Medical Certificate document
     end
     
     Maker->>UI: Click "Submit for Approval" (without attachment)
@@ -620,7 +620,7 @@ sequenceDiagram
     API-->>UI: Return Waiver Data
     
     rect rgb(255, 245, 245)
-        Note over UI: Principal's Review Screen Shows: | - Student: STU-2024-1234 (Sarah Johnson) | - Amount: $50 | - Reason: "Medical Emergency" | - Attachments: NONE (0 files) | - Policy Requirement: Medical waivers require proof
+        Note over UI: Principal's Review Screen Shows:; - Student: STU-2024-1234 (Sarah Johnson); - Amount: $50; - Reason: "Medical Emergency"; - Attachments: NONE (0 files); - Policy Requirement: Medical waivers require proof
     end
     
     Checker->>UI: Identify Missing Documentation
@@ -668,7 +668,7 @@ sequenceDiagram
     API-->>UI: Return Editable Form + Comment Thread
     
     rect rgb(255, 250, 240)
-        Note over UI: Clerk Sees: | - Original Submission (Read-Only) | - Principal's Comment (Highlighted) | - Attachment Upload Section (Enabled) | - "Resubmit" Button
+        Note over UI: Clerk Sees:; - Original Submission (Read-Only); - Principal's Comment (Highlighted); - Attachment Upload Section (Enabled); - "Resubmit" Button
     end
     
     UI-->>Maker: Display Form with Principal's Feedback
@@ -713,7 +713,7 @@ sequenceDiagram
     API-->>UI: Return Complete Data
     
     rect rgb(240, 255, 240)
-        Note over UI: Principal Now Sees: | - Attachments: 1 file (Medical_Certificate_Sarah_Johnson.pdf) | - History: Original submission → Rejected → Resubmitted | - Document Preview Available
+        Note over UI: Principal Now Sees:; - Attachments: 1 file (Medical_Certificate_Sarah_Johnson.pdf); - History: Original submission → Rejected → Resubmitted; - Document Preview Available
     end
     
     UI-->>Checker: Display Updated Request with Attachment
@@ -806,7 +806,7 @@ sequenceDiagram
     UI->>API: POST /api/fine-waivers (Amount: $5.00, Reason: "Rounding error")
     
     rect rgb(240, 248, 255)
-        Note over API: API does NOT immediately save to DB. | First, it queries the Rules Engine to | determine if approval is required.
+        Note over API: API does NOT immediately save to DB.; First, it queries the Rules Engine to; determine if approval is required.
     end
     
     API->>Rules: Evaluate Request Against Auto-Approval Rules
@@ -814,7 +814,7 @@ sequenceDiagram
     Rules->>Rules: Load Active Rules for Entity Type: FINE_WAIVER
     
     rect rgb(255, 250, 240)
-        Note over Rules: Rule Engine Finds: | Rule ID: AR-001 | Condition: amount < 10.00 | Action: AUTO_APPROVE | Created By: System Administrator | Effective Date: 2024-01-01
+        Note over Rules: Rule Engine Finds:; Rule ID: AR-001; Condition: amount < 10.00; Action: AUTO_APPROVE; Created By: System Administrator; Effective Date: 2024-01-01
     end
     
     Rules->>Rules: Evaluate: $5.00 < $10.00 → TRUE
@@ -828,7 +828,7 @@ sequenceDiagram
     API->>DB: COMMIT TRANSACTION
     
     rect rgb(240, 255, 240)
-        Note over DB: Record State: APPROVED (immediately) | Approved By: SYSTEM (Rule AR-001) | No human intervention required
+        Note over DB: Record State: APPROVED (immediately); Approved By: SYSTEM (Rule AR-001); No human intervention required
     end
     
     API->>Audit: Log Auto-Approval Event
@@ -858,7 +858,7 @@ sequenceDiagram
     Rules->>Rules: Evaluate: $150.00 < $10.00 → FALSE
     
     rect rgb(255, 245, 245)
-        Note over Rules: No Auto-Approval Rule Matches. | Request requires human review.
+        Note over Rules: No Auto-Approval Rule Matches.; Request requires human review.
     end
     
     Rules-->>API: Decision: REQUIRES_MANUAL_APPROVAL (No matching rule)
@@ -917,4 +917,5 @@ sequenceDiagram
 - Auto-approved transactions are flagged in audit reports.
 - Monthly reviews compare auto-approval rates to manual approval rates.
 - Anomaly detection alerts administrators if auto-approval volume spikes unexpectedly.
+
 
