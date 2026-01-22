@@ -58,20 +58,20 @@ This system does all of that, but for school fees!
 flowchart TD
     Start([New Academic Year Begins]) --> Step1[Step 1: Configure Academic Year]
     
-    Step1 --> Explain1["📝 What it means:<br/>Set year as 2024-25<br/>Define terms: Term 1, Term 2, Term 3"]
+    Step1 --> Explain1[" What it means:<br/>Set year as 2024-25<br/>Define terms: Term 1, Term 2, Term 3"]
     Explain1 --> Step2[Step 2: Create Classes & Sections]
     
-    Step2 --> Explain2["📝 What it means:<br/>Add Class 1, Class 2, etc.<br/>Add sections: 1-A, 1-B, etc."]
+    Step2 --> Explain2[" What it means:<br/>Add Class 1, Class 2, etc.<br/>Add sections: 1-A, 1-B, etc."]
     Explain2 --> Step3[Step 3: Create Fee Heads]
     
-    Step3 --> Explain3["📝 What it means:<br/>Tuition Fee: ₹10,000<br/>Transport Fee: ₹3,000<br/>Library Fee: ₹500"]
+    Step3 --> Explain3[" What it means:<br/>Tuition Fee: ₹10,000<br/>Transport Fee: ₹3,000<br/>Library Fee: ₹500"]
     Explain3 --> Step4[Step 4: Create Fee Templates]
     
-    Step4 --> Explain4["📝 What it means:<br/>Class 1 Package:<br/>Tuition + Library = ₹10,500<br/><br/>Class 1 with Bus:<br/>Tuition + Library + Transport = ₹13,500"]
+    Step4 --> Explain4[" What it means:<br/>Class 1 Package:<br/>Tuition + Library = ₹10,500<br/><br/>Class 1 with Bus:<br/>Tuition + Library + Transport = ₹13,500"]
     Explain4 --> Step5[Step 5: Assign Fees to Students]
     
-    Step5 --> Explain5["📝 What it means:<br/>Student Rahul gets 'Class 1 with Bus'<br/>Student Priya gets 'Class 1 Package'"]
-    Explain5 --> SetupComplete[✅ Setup Complete!]
+    Step5 --> Explain5[" What it means:<br/>Student Rahul gets 'Class 1 with Bus'<br/>Student Priya gets 'Class 1 Package'"]
+    Explain5 --> SetupComplete[ Setup Complete!]
     
     style Start fill:#4CAF50
     style SetupComplete fill:#4CAF50
@@ -114,7 +114,7 @@ flowchart TD
     Morning([Morning: Counter Opens]) --> Parent1[Parent Arrives at Counter]
     
     Parent1 --> Staff1[Staff: Search Student Name]
-    Staff1 --> Explain1["📝 What happens:<br/>System shows:<br/>- Student: Rahul Kumar<br/>- Class: 1-A<br/>- Total Fee: ₹12,600<br/>- Paid: ₹0<br/>- Due: ₹12,600"]
+    Staff1 --> Explain1[" What happens:<br/>System shows:<br/>- Student: Rahul Kumar<br/>- Class: 1-A<br/>- Total Fee: ₹12,600<br/>- Paid: ₹0<br/>- Due: ₹12,600"]
     
     Explain1 --> Staff2[Staff: Ask Payment Amount]
     Staff2 --> ParentChoice{Parent Chooses}
@@ -125,22 +125,22 @@ flowchart TD
     FullPay --> Receipt1[Generate Receipt]
     PartialPay --> Receipt2[Generate Receipt]
     
-    Receipt1 --> Explain2["📝 Receipt shows:<br/>Received: ₹12,600<br/>Balance: ₹0<br/>Status: PAID IN FULL"]
+    Receipt1 --> Explain2[" Receipt shows:<br/>Received: ₹12,600<br/>Balance: ₹0<br/>Status: PAID IN FULL"]
     
-    Receipt2 --> Explain3["📝 Receipt shows:<br/>Received: ₹5,000<br/>Balance: ₹7,600<br/>Status: PARTIAL PAYMENT"]
+    Receipt2 --> Explain3[" Receipt shows:<br/>Received: ₹5,000<br/>Balance: ₹7,600<br/>Status: PARTIAL PAYMENT"]
     
     Explain2 --> SMS1[Auto SMS to Parent]
     Explain3 --> SMS2[Auto SMS to Parent]
     
-    SMS1 --> SMSText1["📱 SMS:<br/>'Dear Parent, Fee ₹12,600<br/>received for Rahul Kumar.<br/>Receipt #12345'"]
+    SMS1 --> SMSText1[" SMS:<br/>'Dear Parent, Fee ₹12,600<br/>received for Rahul Kumar.<br/>Receipt #12345'"]
     
-    SMS2 --> SMSText2["📱 SMS:<br/>'Dear Parent, Fee ₹5,000<br/>received for Rahul Kumar.<br/>Balance: ₹7,600<br/>Receipt #12346'"]
+    SMS2 --> SMSText2[" SMS:<br/>'Dear Parent, Fee ₹5,000<br/>received for Rahul Kumar.<br/>Balance: ₹7,600<br/>Receipt #12346'"]
     
     SMSText1 --> DayEnd[End of Day: Settlement]
     SMSText2 --> DayEnd
     
     DayEnd --> Count[Staff Counts Cash]
-    Count --> Explain4["📝 What happens:<br/>Physical Cash: ₹17,600<br/>System Shows: ₹17,600<br/>Status: ✅ MATCHED"]
+    Count --> Explain4[" What happens:<br/>Physical Cash: ₹17,600<br/>System Shows: ₹17,600<br/>Status:  MATCHED"]
     
     Explain4 --> Complete[Day Complete!]
     
@@ -166,7 +166,7 @@ Transaction 1:
 - Amount Paid: ₹12,600 (Cash)
 - Receipt #: FEE/2025/00123
 - Balance: ₹0
-- SMS Sent: ✅
+- SMS Sent: 
 
 Transaction 2:
 - Time: 10:15 AM
@@ -175,12 +175,12 @@ Transaction 2:
 - Amount Paid: ₹5,000 (Cash)
 - Receipt #: FEE/2025/00124
 - Balance: ₹11,600
-- SMS Sent: ✅
+- SMS Sent: 
 
 End of Day:
 - Total Cash Collected: ₹17,600
 - Total in System: ₹17,600
-- Status: ✅ Matched
+- Status:  Matched
 ```
 
 ---
@@ -191,7 +191,7 @@ End of Day:
 flowchart TD
     Start([Parent at Home]) --> Login[Open Parent Portal on Phone]
     
-    Login --> Explain1["📝 What parent sees:<br/>Welcome, Mr. Kumar!<br/><br/>Outstanding Dues:<br/>Rahul Kumar - Class 1-A<br/>Amount: ₹12,600<br/><br/>🔴 Due Date: Jan 31, 2025"]
+    Login --> Explain1[" What parent sees:<br/>Welcome, Mr. Kumar!<br/><br/>Outstanding Dues:<br/>Rahul Kumar - Class 1-A<br/>Amount: ₹12,600<br/><br/> Due Date: Jan 31, 2025"]
     
     Explain1 --> ClickPay[Parent Clicks 'Pay Now']
     ClickPay --> SelectAmount[Select Amount to Pay]
@@ -206,28 +206,28 @@ flowchart TD
     
     Gateway --> GatewayChoice{Payment Method}
     
-    GatewayChoice -->|UPI| UPI["📱 UPI<br/>(Google Pay, PhonePe)"]
-    GatewayChoice -->|Card| Card["💳 Credit/Debit Card"]
-    GatewayChoice -->|Net Banking| NetBanking["🏦 Net Banking"]
+    GatewayChoice -->|UPI| UPI[" UPI<br/>(Google Pay, PhonePe)"]
+    GatewayChoice -->|Card| Card[" Credit/Debit Card"]
+    GatewayChoice -->|Net Banking| NetBanking[" Net Banking"]
     
-    UPI --> Explain2["📝 What happens:<br/>1. Redirected to payment page<br/>2. Enter UPI PIN<br/>3. Payment processing..."]
+    UPI --> Explain2[" What happens:<br/>1. Redirected to payment page<br/>2. Enter UPI PIN<br/>3. Payment processing..."]
     
     Card --> Explain2
     NetBanking --> Explain2
     
     Explain2 --> Success{Payment Status}
     
-    Success -->|Success| PaySuccess["✅ Payment Successful!"]
-    Success -->|Failed| PayFailed["❌ Payment Failed"]
+    Success -->|Success| PaySuccess[" Payment Successful!"]
+    Success -->|Failed| PayFailed[" Payment Failed"]
     
     PaySuccess --> Receipt[Digital Receipt Generated]
-    Receipt --> Explain3["📝 Parent receives:<br/>1. Receipt on screen<br/>2. SMS confirmation<br/>3. Email with PDF<br/>4. WhatsApp message"]
+    Receipt --> Explain3[" Parent receives:<br/>1. Receipt on screen<br/>2. SMS confirmation<br/>3. Email with PDF<br/>4. WhatsApp message"]
     
     Explain3 --> Updated[Ledger Updated Instantly]
-    Updated --> ShowUpdated["📝 Portal now shows:<br/>Outstanding Dues: ₹0<br/>Status: ✅ PAID"]
+    Updated --> ShowUpdated[" Portal now shows:<br/>Outstanding Dues: ₹0<br/>Status:  PAID"]
     
     PayFailed --> Retry[Show Error Message]
-    Retry --> Explain4["📝 Parent sees:<br/>'Payment failed due to<br/>insufficient balance.<br/>Please try again.'"]
+    Retry --> Explain4[" Parent sees:<br/>'Payment failed due to<br/>insufficient balance.<br/>Please try again.'"]
     
     Explain4 --> Gateway
     
@@ -272,7 +272,7 @@ Step 5: Confirmation
 
 Portal Updated:
 - Outstanding: ₹0
-- Status: ✅ PAID IN FULL
+- Status:  PAID IN FULL
 ```
 
 ---
@@ -283,18 +283,18 @@ Portal Updated:
 flowchart TD
     MonthEnd([Month-End: January 31]) --> System[System Auto-Identifies Defaulters]
     
-    System --> Explain1["📝 System checks:<br/>Due Date: Jan 31<br/>Today: Feb 1<br/><br/>Students with balance > 0:<br/>- Priya Sharma: ₹11,600<br/>- Amit Verma: ₹12,600<br/>- Total: 45 students"]
+    System --> Explain1[" System checks:<br/>Due Date: Jan 31<br/>Today: Feb 1<br/><br/>Students with balance > 0:<br/>- Priya Sharma: ₹11,600<br/>- Amit Verma: ₹12,600<br/>- Total: 45 students"]
     
     Explain1 --> AutoReminder[System Sends Auto Reminder]
-    AutoReminder --> SMS["📱 SMS Sent:<br/>'Dear Parent,<br/>Fee of ₹11,600 is overdue<br/>for Priya Sharma.<br/>Please pay at earliest.'"]
+    AutoReminder --> SMS[" SMS Sent:<br/>'Dear Parent,<br/>Fee of ₹11,600 is overdue<br/>for Priya Sharma.<br/>Please pay at earliest.'"]
     
     SMS --> Wait[Wait 7 Days]
     Wait --> Check{Payment Received?}
     
-    Check -->|Yes| Paid["✅ Parent Paid<br/>Remove from defaulter list"]
+    Check -->|Yes| Paid[" Parent Paid<br/>Remove from defaulter list"]
     Check -->|No| Level2[Escalate to Level 2]
     
-    Level2 --> Explain2["📝 What happens:<br/>1. Class teacher assigned<br/>2. Teacher calls parent<br/>3. Logs conversation"]
+    Level2 --> Explain2[" What happens:<br/>1. Class teacher assigned<br/>2. Teacher calls parent<br/>3. Logs conversation"]
     
     Explain2 --> Wait2[Wait 7 More Days]
     Wait2 --> Check2{Payment Received?}
@@ -302,17 +302,17 @@ flowchart TD
     Check2 -->|Yes| Paid
     Check2 -->|No| Level3[Escalate to Level 3]
     
-    Level3 --> Explain3["📝 What happens:<br/>1. Principal meeting scheduled<br/>2. Payment plan offered<br/>3. Or academic hold applied"]
+    Level3 --> Explain3[" What happens:<br/>1. Principal meeting scheduled<br/>2. Payment plan offered<br/>3. Or academic hold applied"]
     
     Explain3 --> Hold[Apply Academic Hold]
-    Hold --> Explain4["📝 Hold means:<br/>❌ Cannot download report card<br/>❌ Cannot appear in exams<br/>✅ Can attend classes<br/><br/>Released when payment made"]
+    Hold --> Explain4[" Hold means:<br/> Cannot download report card<br/> Cannot appear in exams<br/> Can attend classes<br/><br/>Released when payment made"]
     
     Explain4 --> PaymentMade{Parent Pays?}
     
     PaymentMade -->|Yes| ReleaseHold[Release Hold Immediately]
     PaymentMade -->|No| Legal[Send Legal Notice]
     
-    ReleaseHold --> Explain5["📝 What happens:<br/>1. Hold removed<br/>2. Report card accessible<br/>3. Can appear in exams<br/>4. SMS sent to parent"]
+    ReleaseHold --> Explain5[" What happens:<br/>1. Hold removed<br/>2. Report card accessible<br/>3. Can appear in exams<br/>4. SMS sent to parent"]
     
     style MonthEnd fill:#FF9800
     style Paid fill:#4CAF50
@@ -519,7 +519,7 @@ Rahul Kumar - Ledger
 ```
 System says: Collected ₹1,00,000
 Bank says: Deposited ₹1,00,000
-Status: ✅ Matched
+Status:  Matched
 ```
 
 ### What is "Maker-Checker"?
