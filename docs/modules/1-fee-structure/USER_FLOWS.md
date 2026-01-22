@@ -24,49 +24,49 @@ flowchart TD
     Start([Admin Logs In]) --> Dashboard[Dashboard Screen]
     
     Dashboard --> ClickFee[Click 'Fee Management' in Sidebar]
-    ClickFee --> FeeModule[Fee Management Landing Page<br/>Shows: Fee Heads, Templates, Assignments]
+    ClickFee --> FeeModule[Fee Management Landing Page | Shows: Fee Heads, Templates, Assignments]
     
     FeeModule --> ClickHeads[Click 'Fee Heads' Tab]
-    ClickHeads --> HeadsList[Fee Heads List Screen<br/>Table showing existing fee heads]
+    ClickHeads --> HeadsList[Fee Heads List Screen | Table showing existing fee heads]
     
-    HeadsList --> ClickNew[Click 'Create New Fee Head' Button<br/>Blue button, top-right]
-    ClickNew --> FormModal[Modal Dialog Opens:<br/>'Create Fee Head']
+    HeadsList --> ClickNew[Click 'Create New Fee Head' Button | Blue button, top-right]
+    ClickNew --> FormModal[Modal Dialog Opens: | 'Create Fee Head']
     
-    FormModal --> ShowForm[Form Fields:<br/>- Fee Head Name (required)<br/>- Category dropdown<br/>- Amount (optional default)<br/>- Mandatory/Optional toggle<br/>- Description textarea]
+    FormModal --> ShowForm[Form Fields: | - Fee Head Name (required) | - Category dropdown | - Amount (optional default) | - Mandatory/Optional toggle | - Description textarea]
     
     ShowForm --> FillName[Enter Name: 'Science Lab Fee']
     FillName --> SelectCategory[Select Category: 'Academic']
     SelectCategory --> EnterAmount[Enter Default Amount: 5000]
     EnterAmount --> ToggleMandatory[Toggle: Mandatory]
-    ToggleMandatory --> EnterDesc[Enter Description:<br/>'Annual fee for science lab equipment']
+    ToggleMandatory --> EnterDesc[Enter Description: | 'Annual fee for science lab equipment']
     
     EnterDesc --> ValidateForm{Real-time Validation}
     
-    ValidateForm -->|Invalid| ShowErrors[Show Inline Errors:<br/>- Red border on invalid fields<br/>- Error message below field]
+    ValidateForm -->|Invalid| ShowErrors[Show Inline Errors: | - Red border on invalid fields | - Error message below field]
     ShowErrors --> ShowForm
     
-    ValidateForm -->|Valid| EnableSave[Save Button Enabled<br/>Changes from gray to blue]
+    ValidateForm -->|Valid| EnableSave[Save Button Enabled | Changes from gray to blue]
     
     EnableSave --> ClickSave[Click 'Save' Button]
-    ClickSave --> LoadingState[Loading Spinner on Button<br/>'Saving...']
+    ClickSave --> LoadingState[Loading Spinner on Button | 'Saving...']
     
-    LoadingState --> CheckDuplicate{System Checks:<br/>Duplicate Name?}
+    LoadingState --> CheckDuplicate{System Checks: | Duplicate Name?}
     
-    CheckDuplicate -->|Duplicate Found| DuplicateError[Error Toast:<br/>'Fee head with this name already exists'<br/>Red banner, auto-dismiss 5s]
+    CheckDuplicate -->|Duplicate Found| DuplicateError[Error Toast: | 'Fee head with this name already exists' | Red banner, auto-dismiss 5s]
     DuplicateError --> FormModal
     
-    CheckDuplicate -->|No Duplicate| SaveSuccess[Success Animation:<br/>Green checkmark]
+    CheckDuplicate -->|No Duplicate| SaveSuccess[Success Animation: | Green checkmark]
     
-    SaveSuccess --> SuccessToast[Success Toast:<br/>'Science Lab Fee created successfully'<br/>Green banner at top]
+    SaveSuccess --> SuccessToast[Success Toast: | 'Science Lab Fee created successfully' | Green banner at top]
     
     SuccessToast --> ModalClose[Modal Closes Automatically]
-    ModalClose --> UpdatedList[Fee Heads List Updates:<br/>- New item appears at top<br/>- Highlight animation (fade in)<br/>- Green 'Active' badge]
+    ModalClose --> UpdatedList[Fee Heads List Updates: | - New item appears at top | - Highlight animation (fade in) | - Green 'Active' badge]
     
     UpdatedList --> UserChoice{User Action}
     
     UserChoice -->|Create Another| ClickNew
     UserChoice -->|Edit New Item| ClickEdit[Click Edit Icon on New Item]
-    ClickEdit --> EditModal[Edit Modal Opens<br/>Pre-filled with saved data]
+    ClickEdit --> EditModal[Edit Modal Opens | Pre-filled with saved data]
     
     UserChoice -->|Continue| End([User Continues Work])
     
@@ -119,47 +119,47 @@ flowchart TD
 ```mermaid
 flowchart TD
     Start([Admin on Fee Management Page]) --> ClickTemplates[Click 'Templates' Tab]
-    ClickTemplates --> TemplateList[Fee Templates List Screen<br/>Shows existing templates by class]
+    ClickTemplates --> TemplateList[Fee Templates List Screen | Shows existing templates by class]
     
     TemplateList --> ClickNew[Click 'Create New Template' Button]
-    ClickNew --> TemplateForm[Template Creation Screen<br/>Multi-step wizard]
+    ClickNew --> TemplateForm[Template Creation Screen | Multi-step wizard]
     
-    TemplateForm --> Step1[Step 1: Basic Information<br/>Progress: 1 of 3]
+    TemplateForm --> Step1[Step 1: Basic Information | Progress: 1 of 3]
     
-    Step1 --> FillBasic[Fill Fields:<br/>- Template Name: 'Class 10 Science 2024-25'<br/>- Academic Year: 2024-25<br/>- Class: 10<br/>- Section: All<br/>- Stream: Science]
+    Step1 --> FillBasic[Fill Fields: | - Template Name: 'Class 10 Science 2024-25' | - Academic Year: 2024-25 | - Class: 10 | - Section: All | - Stream: Science]
     
     FillBasic --> ValidateStep1{Validate Step 1}
     
-    ValidateStep1 -->|Invalid| ShowStep1Errors[Show Errors:<br/>Required fields highlighted]
+    ValidateStep1 -->|Invalid| ShowStep1Errors[Show Errors: | Required fields highlighted]
     ShowStep1Errors --> Step1
     
     ValidateStep1 -->|Valid| ClickNext1[Click 'Next' Button]
-    ClickNext1 --> Step2[Step 2: Add Fee Heads<br/>Progress: 2 of 3]
+    ClickNext1 --> Step2[Step 2: Add Fee Heads | Progress: 2 of 3]
     
-    Step2 --> ShowAvailable[Left Panel: Available Fee Heads<br/>- Searchable list<br/>- Grouped by category<br/>Right Panel: Selected Fee Heads<br/>- Empty initially]
+    Step2 --> ShowAvailable[Left Panel: Available Fee Heads | - Searchable list | - Grouped by category | Right Panel: Selected Fee Heads | - Empty initially]
     
     ShowAvailable --> SearchFee[Search: 'Tuition']
-    SearchFee --> FilteredList[List Filters to Show:<br/>- Tuition Fee<br/>- Tuition Fee (Hostel)]
+    SearchFee --> FilteredList[List Filters to Show: | - Tuition Fee | - Tuition Fee (Hostel)]
     
-    FilteredList --> SelectTuition[Click on 'Tuition Fee'<br/>Item highlights]
+    FilteredList --> SelectTuition[Click on 'Tuition Fee' | Item highlights]
     SelectTuition --> ClickAdd[Click 'Add' Button or Drag to Right]
     
-    ClickAdd --> MoveToSelected[Item Moves to Right Panel<br/>Slide animation]
+    ClickAdd --> MoveToSelected[Item Moves to Right Panel | Slide animation]
     
-    MoveToSelected --> EnterAmount[Amount Input Field Appears:<br/>Enter: 50000]
-    EnterAmount --> AddMore[Add More Fee Heads:<br/>- Science Lab Fee: 5000<br/>- Library Fee: 2000<br/>- Examination Fee: 3000]
+    MoveToSelected --> EnterAmount[Amount Input Field Appears: | Enter: 50000]
+    EnterAmount --> AddMore[Add More Fee Heads: | - Science Lab Fee: 5000 | - Library Fee: 2000 | - Examination Fee: 3000]
     
-    AddMore --> ShowTotal[Total Calculation (Auto):<br/>Bottom of right panel<br/>Total: ₹60,000<br/>Large, bold text]
+    AddMore --> ShowTotal[Total Calculation (Auto): | Bottom of right panel | Total: ₹60,000 | Large, bold text]
     
-    ShowTotal --> ValidateStep2{Validate Step 2:<br/>At least 1 fee head?}
+    ShowTotal --> ValidateStep2{Validate Step 2: | At least 1 fee head?}
     
-    ValidateStep2 -->|No Fee Heads| ShowStep2Error[Warning Message:<br/>'Add at least one fee head']
+    ValidateStep2 -->|No Fee Heads| ShowStep2Error[Warning Message: | 'Add at least one fee head']
     ShowStep2Error --> Step2
     
     ValidateStep2 -->|Has Fee Heads| ClickNext2[Click 'Next' Button]
-    ClickNext2 --> Step3[Step 3: Review & Confirm<br/>Progress: 3 of 3]
+    ClickNext2 --> Step3[Step 3: Review & Confirm | Progress: 3 of 3]
     
-    Step3 --> ShowSummary[Summary Card:<br/>- Template name<br/>- Class/Section/Stream<br/>- Fee heads table<br/>- Total amount highlighted]
+    Step3 --> ShowSummary[Summary Card: | - Template name | - Class/Section/Stream | - Fee heads table | - Total amount highlighted]
     
     ShowSummary --> ReviewChoice{User Reviews}
     
@@ -167,18 +167,18 @@ flowchart TD
     ClickBack --> Step2
     
     ReviewChoice -->|Looks Good| ClickCreate[Click 'Create Template' Button]
-    ClickCreate --> LoadingState[Loading Overlay:<br/>'Creating template...'<br/>Spinner]
+    ClickCreate --> LoadingState[Loading Overlay: | 'Creating template...' | Spinner]
     
-    LoadingState --> SuccessScreen[Success Screen:<br/>Green checkmark animation<br/>'Template Created Successfully']
+    LoadingState --> SuccessScreen[Success Screen: | Green checkmark animation | 'Template Created Successfully']
     
-    SuccessScreen --> ShowOptions[Action Options:<br/>- View Template<br/>- Assign to Students<br/>- Create Another Template<br/>- Back to Templates List]
+    SuccessScreen --> ShowOptions[Action Options: | - View Template | - Assign to Students | - Create Another Template | - Back to Templates List]
     
     ShowOptions --> UserChoice{User Selects}
     
     UserChoice -->|View| ViewTemplate[Template Detail Page]
     UserChoice -->|Assign| AssignFlow[Go to Assignment Flow]
     UserChoice -->|Create Another| TemplateForm
-    UserChoice -->|Back to List| UpdatedList[Templates List<br/>New template at top<br/>Badge: 'Not Assigned']
+    UserChoice -->|Back to List| UpdatedList[Templates List | New template at top | Badge: 'Not Assigned']
     
     UpdatedList --> End([User Continues])
     
@@ -233,27 +233,27 @@ flowchart TD
 ```mermaid
 flowchart TD
     Start([Admin on Dashboard]) --> ClickStudents[Click 'Student Fee Assignment' Menu]
-    ClickStudents --> AssignmentPage[Fee Assignment Screen<br/>Two modes: Individual | Bulk]
+    ClickStudents --> AssignmentPage[Fee Assignment Screen | Two modes: Individual | Bulk]
     
     AssignmentPage --> SelectMode[Select 'Individual Assignment' Tab]
-    SelectMode --> SearchStudent[Student Search Section<br/>Search by: Name, ID, Class]
+    SelectMode --> SearchStudent[Student Search Section | Search by: Name, ID, Class]
     
     SearchStudent --> TypeSearch[Type Student Name: 'Sarah']
-    TypeSearch --> ShowResults[Dropdown Shows Results:<br/>- Sarah Johnson (Class 10-A)<br/>- Sarah Williams (Class 9-B)<br/>Live search, updates as typing]
+    TypeSearch --> ShowResults[Dropdown Shows Results: | - Sarah Johnson (Class 10-A) | - Sarah Williams (Class 9-B) | Live search, updates as typing]
     
     ShowResults --> SelectStudent[Click on 'Sarah Johnson (Class 10-A)']
-    SelectStudent --> LoadStudent[Loading Spinner<br/>'Loading student details...']
+    SelectStudent --> LoadStudent[Loading Spinner | 'Loading student details...']
     
-    LoadStudent --> StudentCard[Student Info Card Appears:<br/>- Photo<br/>- Name, ID, Class, Section<br/>- Current fee status badge]
+    LoadStudent --> StudentCard[Student Info Card Appears: | - Photo | - Name, ID, Class, Section | - Current fee status badge]
     
     StudentCard --> CheckStatus{Fee Already Assigned?}
     
-    CheckStatus -->|Yes| ShowWarning[Warning Banner:<br/>'Student already has fee structure'<br/>Options: View | Modify | Reassign]
+    CheckStatus -->|Yes| ShowWarning[Warning Banner: | 'Student already has fee structure' | Options: View | Modify | Reassign]
     ShowWarning --> WarningChoice{User Choice}
     
-    WarningChoice -->|View| ViewExisting[View Current Fee Structure<br/>Read-only modal]
+    WarningChoice -->|View| ViewExisting[View Current Fee Structure | Read-only modal]
     WarningChoice -->|Modify| ModifyFlow[Go to Modification Flow]
-    WarningChoice -->|Reassign| ConfirmReassign[Confirmation Dialog:<br/>'Replace existing fee structure?'<br/>Warning: Cannot be undone]
+    WarningChoice -->|Reassign| ConfirmReassign[Confirmation Dialog: | 'Replace existing fee structure?' | Warning: Cannot be undone]
     
     ConfirmReassign --> ClickCancel[Click 'Cancel']
     ClickCancel --> AssignmentPage
@@ -261,54 +261,54 @@ flowchart TD
     ConfirmReassign --> ClickConfirm[Click 'Yes, Replace']
     ClickConfirm --> SelectTemplate
     
-    CheckStatus -->|No| SelectTemplate[Template Selection Section<br/>Dropdown: 'Select Template']
+    CheckStatus -->|No| SelectTemplate[Template Selection Section | Dropdown: 'Select Template']
     
-    SelectTemplate --> ShowTemplates[Dropdown Shows:<br/>- Recommended (based on class/section)<br/>- All Templates (grouped by class)]
+    SelectTemplate --> ShowTemplates[Dropdown Shows: | - Recommended (based on class/section) | - All Templates (grouped by class)]
     
-    ShowTemplates --> ClickRecommended[Click Recommended:<br/>'Class 10 Science 2024-25'<br/>Badge: 'Recommended']
+    ShowTemplates --> ClickRecommended[Click Recommended: | 'Class 10 Science 2024-25' | Badge: 'Recommended']
     
     ClickRecommended --> LoadTemplate[Loading Template Details...]
-    LoadTemplate --> ShowPreview[Template Preview Card:<br/>- Fee heads breakdown<br/>- Total amount<br/>- Installment plan preview]
+    LoadTemplate --> ShowPreview[Template Preview Card: | - Fee heads breakdown | - Total amount | - Installment plan preview]
     
     ShowPreview --> CheckConcession{Apply Concession?}
     
     CheckConcession -->|Yes| ClickConcession[Click 'Add Concession' Button]
     ClickConcession --> ConcessionModal[Concession Selection Modal]
     
-    ConcessionModal --> ShowEligible[Auto-Check Eligibility:<br/>System shows:<br/>- Eligible concessions (green)<br/>- Ineligible (grayed out with reason)]
+    ConcessionModal --> ShowEligible[Auto-Check Eligibility: | System shows: | - Eligible concessions (green) | - Ineligible (grayed out with reason)]
     
     ShowEligible --> SelectConcession[Select: 'Sibling Discount - 10%']
     SelectConcession --> ApplyConcession[Click 'Apply']
     
-    ApplyConcession --> UpdatePreview[Preview Updates:<br/>- Original: ₹60,000<br/>- Discount: -₹6,000<br/>- Final: ₹54,000<br/>Green highlight on savings]
+    ApplyConcession --> UpdatePreview[Preview Updates: | - Original: ₹60,000 | - Discount: -₹6,000 | - Final: ₹54,000 | Green highlight on savings]
     
-    CheckConcession -->|No| SelectInstallment[Installment Plan Section<br/>Dropdown: 'Select Plan']
+    CheckConcession -->|No| SelectInstallment[Installment Plan Section | Dropdown: 'Select Plan']
     UpdatePreview --> SelectInstallment
     
-    SelectInstallment --> ShowPlans[Available Plans:<br/>- Quarterly (Default)<br/>- Monthly<br/>- Half-Yearly<br/>- Annual (5% discount)]
+    SelectInstallment --> ShowPlans[Available Plans: | - Quarterly (Default) | - Monthly | - Half-Yearly | - Annual (5% discount)]
     
     ShowPlans --> ClickPlan[Select: 'Quarterly']
-    ClickPlan --> ShowSchedule[Payment Schedule Table:<br/>Q1 (Apr): ₹16,200<br/>Q2 (Jul): ₹16,200<br/>Q3 (Oct): ₹10,800<br/>Q4 (Jan): ₹10,800]
+    ClickPlan --> ShowSchedule[Payment Schedule Table: | Q1 (Apr): ₹16,200 | Q2 (Jul): ₹16,200 | Q3 (Oct): ₹10,800 | Q4 (Jan): ₹10,800]
     
-    ShowSchedule --> FinalReview[Final Review Section:<br/>Summary card with all details]
+    ShowSchedule --> FinalReview[Final Review Section: | Summary card with all details]
     
-    FinalReview --> ClickAssign[Click 'Assign Fee Structure' Button<br/>Large, blue, primary button]
+    FinalReview --> ClickAssign[Click 'Assign Fee Structure' Button | Large, blue, primary button]
     
-    ClickAssign --> ConfirmDialog[Confirmation Dialog:<br/>'Assign fee structure to Sarah Johnson?'<br/>Shows final amount]
+    ClickAssign --> ConfirmDialog[Confirmation Dialog: | 'Assign fee structure to Sarah Johnson?' | Shows final amount]
     
     ConfirmDialog --> ClickConfirmAssign[Click 'Confirm']
-    ClickConfirmAssign --> ProcessingState[Processing Overlay:<br/>'Assigning fee structure...'<br/>Progress bar]
+    ClickConfirmAssign --> ProcessingState[Processing Overlay: | 'Assigning fee structure...' | Progress bar]
     
-    ProcessingState --> SuccessAnimation[Success Animation:<br/>Green checkmark<br/>Confetti effect]
+    ProcessingState --> SuccessAnimation[Success Animation: | Green checkmark | Confetti effect]
     
-    SuccessAnimation --> SuccessMessage[Success Screen:<br/>'Fee Structure Assigned Successfully'<br/>Receipt preview]
+    SuccessAnimation --> SuccessMessage[Success Screen: | 'Fee Structure Assigned Successfully' | Receipt preview]
     
-    SuccessMessage --> ActionButtons[Action Options:<br/>- Print Fee Receipt<br/>- Send to Parent (Email/SMS)<br/>- Assign Another Student<br/>- View Student Ledger]
+    SuccessMessage --> ActionButtons[Action Options: | - Print Fee Receipt | - Send to Parent (Email/SMS) | - Assign Another Student | - View Student Ledger]
     
     ActionButtons --> UserAction{User Selects}
     
-    UserAction -->|Print| PrintReceipt[Open Print Dialog<br/>PDF generation]
-    UserAction -->|Send| SendNotif[Send Notification Screen<br/>Email/SMS options]
+    UserAction -->|Print| PrintReceipt[Open Print Dialog | PDF generation]
+    UserAction -->|Send| SendNotif[Send Notification Screen | Email/SMS options]
     UserAction -->|Assign Another| SearchStudent
     UserAction -->|View Ledger| StudentLedger[Student Ledger Page]
     UserAction -->|Done| End([User Continues])
@@ -364,18 +364,18 @@ flowchart TD
 ```mermaid
 flowchart TD
     Start([Admin on Fee Management]) --> ClickConcessions[Click 'Concessions' Tab]
-    ClickConcessions --> ConcessionList[Concessions List Screen<br/>Shows active and inactive rules]
+    ClickConcessions --> ConcessionList[Concessions List Screen | Shows active and inactive rules]
     
     ConcessionList --> ClickNew[Click 'Create New Concession' Button]
-    ClickNew --> RuleWizard[Concession Rule Wizard<br/>Step 1 of 4]
+    ClickNew --> RuleWizard[Concession Rule Wizard | Step 1 of 4]
     
     RuleWizard --> Step1Basic[Step 1: Basic Information]
-    Step1Basic --> FillBasic[Fill Fields:<br/>- Rule Name: 'Sibling Discount'<br/>- Type: Percentage<br/>- Value: 10%<br/>- Priority: Medium]
+    Step1Basic --> FillBasic[Fill Fields: | - Rule Name: 'Sibling Discount' | - Type: Percentage | - Value: 10% | - Priority: Medium]
     
     FillBasic --> ClickNext1[Click 'Next']
-    ClickNext1 --> Step2Eligibility[Step 2: Eligibility Criteria<br/>Define who qualifies]
+    ClickNext1 --> Step2Eligibility[Step 2: Eligibility Criteria | Define who qualifies]
     
-    Step2Eligibility --> ShowCriteria[Criteria Builder:<br/>Drag-and-drop rule builder]
+    Step2Eligibility --> ShowCriteria[Criteria Builder: | Drag-and-drop rule builder]
     
     ShowCriteria --> AddCondition[Click 'Add Condition' Button]
     AddCondition --> SelectField[Select Field: 'Number of Siblings']
@@ -390,16 +390,16 @@ flowchart TD
     AddAnother -->|No| ClickNext2[Click 'Next']
     ClickNext2 --> Step3Limits[Step 3: Limits & Restrictions]
     
-    Step3Limits --> SetLimits[Configure:<br/>- Max beneficiaries: 100<br/>- Valid from: Apr 1, 2024<br/>- Valid until: Mar 31, 2025<br/>- Applicable fee heads: All<br/>- Auto-apply: Yes]
+    Step3Limits --> SetLimits[Configure: | - Max beneficiaries: 100 | - Valid from: Apr 1, 2024 | - Valid until: Mar 31, 2025 | - Applicable fee heads: All | - Auto-apply: Yes]
     
     SetLimits --> ClickNext3[Click 'Next']
     ClickNext3 --> Step4Review[Step 4: Review & Activate]
     
-    Step4Review --> ShowSummary[Summary Display:<br/>- Rule details<br/>- Eligibility criteria (visual)<br/>- Limits<br/>- Estimated impact (# students)]
+    Step4Review --> ShowSummary[Summary Display: | - Rule details | - Eligibility criteria (visual) | - Limits | - Estimated impact (# students)]
     
-    ShowSummary --> SimulateButton[Click 'Simulate' Button<br/>Optional: Test rule]
+    ShowSummary --> SimulateButton[Click 'Simulate' Button | Optional: Test rule]
     
-    SimulateButton --> SimulationModal[Simulation Results Modal:<br/>- # of students who qualify<br/>- Total discount amount<br/>- Budget impact]
+    SimulateButton --> SimulationModal[Simulation Results Modal: | - # of students who qualify | - Total discount amount | - Budget impact]
     
     SimulationModal --> CloseSimulation[Click 'Close']
     CloseSimulation --> Step4Review
@@ -407,24 +407,24 @@ flowchart TD
     Step4Review --> ActivateChoice{Activate Now?}
     
     ActivateChoice -->|Save as Draft| ClickDraft[Click 'Save as Draft']
-    ClickDraft --> DraftSuccess[Success Toast:<br/>'Rule saved as draft'<br/>Status: Inactive]
+    ClickDraft --> DraftSuccess[Success Toast: | 'Rule saved as draft' | Status: Inactive]
     
     ActivateChoice -->|Activate| ClickActivate[Click 'Save & Activate']
-    ClickActivate --> ConfirmActivate[Confirmation Dialog:<br/>'Activate concession rule?'<br/>Warning: Will apply to eligible students]
+    ClickActivate --> ConfirmActivate[Confirmation Dialog: | 'Activate concession rule?' | Warning: Will apply to eligible students]
     
     ConfirmActivate --> ClickConfirmActivate[Click 'Activate']
-    ClickConfirmActivate --> ProcessingState[Processing:<br/>'Applying rule to eligible students...'<br/>Progress bar with count]
+    ClickConfirmActivate --> ProcessingState[Processing: | 'Applying rule to eligible students...' | Progress bar with count]
     
-    ProcessingState --> SuccessScreen[Success Screen:<br/>'Concession Rule Activated'<br/>Shows: # students affected]
+    ProcessingState --> SuccessScreen[Success Screen: | 'Concession Rule Activated' | Shows: # students affected]
     
-    SuccessScreen --> ShowReport[Impact Report Card:<br/>- Students affected: 45<br/>- Total discount: ₹2,70,000<br/>- Download detailed report]
+    SuccessScreen --> ShowReport[Impact Report Card: | - Students affected: 45 | - Total discount: ₹2,70,000 | - Download detailed report]
     
     ShowReport --> ActionChoice{User Action}
     
     ActionChoice -->|Download Report| DownloadPDF[Generate PDF Report]
     ActionChoice -->|View Students| StudentList[List of Affected Students]
     ActionChoice -->|Create Another| RuleWizard
-    ActionChoice -->|Back to List| UpdatedList[Concessions List<br/>New rule at top<br/>Badge: 'Active' | '45 students']
+    ActionChoice -->|Back to List| UpdatedList[Concessions List | New rule at top | Badge: 'Active' | '45 students']
     
     UpdatedList --> End([User Continues])
     
@@ -475,57 +475,57 @@ flowchart TD
 ```mermaid
 flowchart TD
     Start([Admin on Fee Management]) --> ClickOptional[Click 'Optional Fees' Tab]
-    ClickOptional --> OptionalList[Optional Fees List<br/>Shows all optional fee categories]
+    ClickOptional --> OptionalList[Optional Fees List | Shows all optional fee categories]
     
     OptionalList --> ClickNew[Click 'Create Optional Fee' Button]
     ClickNew --> FormScreen[Optional Fee Form Screen]
     
-    FormScreen --> FillBasic[Fill Basic Details:<br/>- Fee Name: 'School Bus Fee'<br/>- Category: Transport<br/>- Amount: ₹12,000/year<br/>- Description: 'Annual bus transportation']
+    FormScreen --> FillBasic[Fill Basic Details: | - Fee Name: 'School Bus Fee' | - Category: Transport | - Amount: ₹12,000/year | - Description: 'Annual bus transportation']
     
     FillBasic --> CapacitySection[Capacity Management Section]
     
-    CapacitySection --> EnableCapacity[Toggle 'Enable Capacity Limit': ON<br/>Section expands]
+    CapacitySection --> EnableCapacity[Toggle 'Enable Capacity Limit': ON | Section expands]
     
-    EnableCapacity --> SetCapacity[Set Capacity:<br/>- Total capacity: 50<br/>- Per route breakdown:<br/>  Route A: 25<br/>  Route B: 25]
+    EnableCapacity --> SetCapacity[Set Capacity: | - Total capacity: 50 | - Per route breakdown: |   Route A: 25 |   Route B: 25]
     
     SetCapacity --> WaitlistToggle[Toggle 'Enable Waitlist': ON]
     WaitlistToggle --> AvailabilitySection[Availability Section]
     
-    AvailabilitySection --> SelectClasses[Select Available For:<br/>Checkboxes for classes 1-12<br/>Select: All classes]
+    AvailabilitySection --> SelectClasses[Select Available For: | Checkboxes for classes 1-12 | Select: All classes]
     
-    SelectClasses --> SetDates[Set Availability Period:<br/>- Available from: Apr 1, 2024<br/>- Available until: Mar 31, 2025]
+    SelectClasses --> SetDates[Set Availability Period: | - Available from: Apr 1, 2024 | - Available until: Mar 31, 2025]
     
-    SetDates --> RequirementsSection[Requirements Section<br/>Optional: Documents needed]
+    SetDates --> RequirementsSection[Requirements Section | Optional: Documents needed]
     
     RequirementsSection --> AddDoc[Click 'Add Required Document']
-    AddDoc --> SelectDocType[Select: 'Address Proof'<br/>Reason: 'To verify route eligibility']
+    AddDoc --> SelectDocType[Select: 'Address Proof' | Reason: 'To verify route eligibility']
     
-    SelectDocType --> PreviewSection[Preview Section<br/>Shows how it appears to parents]
+    SelectDocType --> PreviewSection[Preview Section | Shows how it appears to parents]
     
     PreviewSection --> ClickPreview[Click 'Preview Parent View']
-    ClickPreview --> PreviewModal[Modal Shows Parent Portal View:<br/>- Fee card<br/>- Capacity indicator<br/>- Enrollment button]
+    ClickPreview --> PreviewModal[Modal Shows Parent Portal View: | - Fee card | - Capacity indicator | - Enrollment button]
     
     PreviewModal --> ClosePreview[Click 'Close Preview']
     ClosePreview --> FormScreen
     
     FormScreen --> ValidateForm{Validate All Fields}
     
-    ValidateForm -->|Invalid| ShowErrors[Show Errors:<br/>Highlight invalid sections]
+    ValidateForm -->|Invalid| ShowErrors[Show Errors: | Highlight invalid sections]
     ShowErrors --> FormScreen
     
     ValidateForm -->|Valid| ClickSave[Click 'Save Optional Fee']
     ClickSave --> LoadingState[Loading: 'Creating optional fee...']
     
-    LoadingState --> SuccessToast[Success Toast:<br/>'School Bus Fee created']
+    LoadingState --> SuccessToast[Success Toast: | 'School Bus Fee created']
     
-    SuccessToast --> UpdatedList[Optional Fees List Updates:<br/>New item with:<br/>- Capacity: 0/50<br/>- Status: Active<br/>- Waitlist: 0]
+    SuccessToast --> UpdatedList[Optional Fees List Updates: | New item with: | - Capacity: 0/50 | - Status: Active | - Waitlist: 0]
     
-    UpdatedList --> ShowCard[Fee Card Shows:<br/>- Name and amount<br/>- Capacity progress bar<br/>- Quick actions: Edit, Enroll, View Enrollments]
+    UpdatedList --> ShowCard[Fee Card Shows: | - Name and amount | - Capacity progress bar | - Quick actions: Edit, Enroll, View Enrollments]
     
     ShowCard --> UserChoice{User Action}
     
     UserChoice -->|Enroll Student| EnrollFlow[Go to Enrollment Flow]
-    UserChoice -->|View Enrollments| EnrollmentList[List of Enrolled Students<br/>With route assignments]
+    UserChoice -->|View Enrollments| EnrollmentList[List of Enrolled Students | With route assignments]
     UserChoice -->|Edit| EditForm[Edit Optional Fee Form]
     UserChoice -->|Done| End([User Continues])
     
@@ -572,45 +572,45 @@ flowchart TD
 ```mermaid
 flowchart TD
     Start([Admin on Fee Management]) --> ClickPlans[Click 'Installment Plans' Tab]
-    ClickPlans --> PlansList[Installment Plans List<br/>Shows existing plans]
+    ClickPlans --> PlansList[Installment Plans List | Shows existing plans]
     
     PlansList --> ClickNew[Click 'Create New Plan' Button]
     ClickNew --> PlanForm[Installment Plan Form]
     
-    PlanForm --> FillBasic[Fill Basic Info:<br/>- Plan Name: 'Quarterly Plan 2024-25'<br/>- Academic Year: 2024-25<br/>- Number of Installments: 4]
+    PlanForm --> FillBasic[Fill Basic Info: | - Plan Name: 'Quarterly Plan 2024-25' | - Academic Year: 2024-25 | - Number of Installments: 4]
     
-    FillBasic --> InstallmentBuilder[Installment Builder Section<br/>Shows 4 empty installment slots]
+    FillBasic --> InstallmentBuilder[Installment Builder Section | Shows 4 empty installment slots]
     
     InstallmentBuilder --> Installment1[Installment 1 Configuration]
     
-    Installment1 --> FillInst1[Fill Details:<br/>- Name: 'Q1 - April'<br/>- Due Date: Apr 30, 2024<br/>- Percentage: 30%<br/>- Description: 'First quarter payment']
+    Installment1 --> FillInst1[Fill Details: | - Name: 'Q1 - April' | - Due Date: Apr 30, 2024 | - Percentage: 30% | - Description: 'First quarter payment']
     
-    FillInst1 --> ShowCalc1[Auto-Calculate:<br/>For ₹60,000 total:<br/>Amount: ₹18,000<br/>Green checkmark]
+    FillInst1 --> ShowCalc1[Auto-Calculate: | For ₹60,000 total: | Amount: ₹18,000 | Green checkmark]
     
     ShowCalc1 --> Installment2[Installment 2 Configuration]
     
-    Installment2 --> FillInst2[Fill Details:<br/>- Name: 'Q2 - July'<br/>- Due Date: Jul 31, 2024<br/>- Percentage: 30%<br/>- Description: 'Second quarter payment']
+    Installment2 --> FillInst2[Fill Details: | - Name: 'Q2 - July' | - Due Date: Jul 31, 2024 | - Percentage: 30% | - Description: 'Second quarter payment']
     
-    FillInst2 --> ShowCalc2[Auto-Calculate:<br/>Amount: ₹18,000]
+    FillInst2 --> ShowCalc2[Auto-Calculate: | Amount: ₹18,000]
     
     ShowCalc2 --> Installment3[Installment 3 Configuration]
     
-    Installment3 --> FillInst3[Fill Details:<br/>- Name: 'Q3 - October'<br/>- Due Date: Oct 31, 2024<br/>- Percentage: 20%]
+    Installment3 --> FillInst3[Fill Details: | - Name: 'Q3 - October' | - Due Date: Oct 31, 2024 | - Percentage: 20%]
     
-    FillInst3 --> ShowCalc3[Auto-Calculate:<br/>Amount: ₹12,000]
+    FillInst3 --> ShowCalc3[Auto-Calculate: | Amount: ₹12,000]
     
     ShowCalc3 --> Installment4[Installment 4 Configuration]
     
-    Installment4 --> FillInst4[Fill Details:<br/>- Name: 'Q4 - January'<br/>- Due Date: Jan 31, 2025<br/>- Percentage: 20%]
+    Installment4 --> FillInst4[Fill Details: | - Name: 'Q4 - January' | - Due Date: Jan 31, 2025 | - Percentage: 20%]
     
-    FillInst4 --> ShowCalc4[Auto-Calculate:<br/>Amount: ₹12,000]
+    FillInst4 --> ShowCalc4[Auto-Calculate: | Amount: ₹12,000]
     
-    ShowCalc4 --> ValidateTotal{Validate:<br/>Total = 100%?}
+    ShowCalc4 --> ValidateTotal{Validate: | Total = 100%?}
     
-    ValidateTotal -->|Not 100%| ShowTotalError[Error Banner:<br/>'Total must equal 100%'<br/>Current: 95%<br/>Red banner at top]
+    ValidateTotal -->|Not 100%| ShowTotalError[Error Banner: | 'Total must equal 100%' | Current: 95% | Red banner at top]
     ShowTotalError --> InstallmentBuilder
     
-    ValidateTotal -->|Equals 100%| ShowSummary[Summary Section:<br/>- Timeline visualization<br/>- Amount breakdown<br/>- Total validation (green)]
+    ValidateTotal -->|Equals 100%| ShowSummary[Summary Section: | - Timeline visualization | - Amount breakdown | - Total validation (green)]
     
     ShowSummary --> DiscountSection[Optional: Early Payment Discount]
     
@@ -619,33 +619,33 @@ flowchart TD
     AddDiscount -->|Yes| ClickAddDiscount[Click 'Add Discount' Button]
     ClickAddDiscount --> DiscountModal[Discount Configuration Modal]
     
-    DiscountModal --> FillDiscount[Fill:<br/>- Discount Type: Percentage<br/>- Value: 5%<br/>- Condition: 'Full payment by Apr 30']
+    DiscountModal --> FillDiscount[Fill: | - Discount Type: Percentage | - Value: 5% | - Condition: 'Full payment by Apr 30']
     
     FillDiscount --> ApplyDiscount[Click 'Apply']
-    ApplyDiscount --> UpdateSummary[Summary Updates:<br/>- Standard: ₹60,000<br/>- With discount: ₹57,000<br/>- Savings: ₹3,000 (highlighted)]
+    ApplyDiscount --> UpdateSummary[Summary Updates: | - Standard: ₹60,000 | - With discount: ₹57,000 | - Savings: ₹3,000 (highlighted)]
     
     AddDiscount -->|No| ApplicabilitySection[Applicability Section]
     UpdateSummary --> ApplicabilitySection
     
-    ApplicabilitySection --> SelectClasses[Select Applicable To:<br/>- All Classes (default)<br/>- Specific Classes (checkboxes)<br/>Select: All]
+    ApplicabilitySection --> SelectClasses[Select Applicable To: | - All Classes (default) | - Specific Classes (checkboxes) | Select: All]
     
-    SelectClasses --> DefaultToggle[Toggle 'Set as Default Plan': ON<br/>Info tooltip: 'Will be auto-assigned']
+    SelectClasses --> DefaultToggle[Toggle 'Set as Default Plan': ON | Info tooltip: 'Will be auto-assigned']
     
-    DefaultToggle --> FinalReview[Final Review Card:<br/>- Plan summary<br/>- Installment schedule table<br/>- Discount details<br/>- Applicability]
+    DefaultToggle --> FinalReview[Final Review Card: | - Plan summary | - Installment schedule table | - Discount details | - Applicability]
     
     FinalReview --> ClickSave[Click 'Save Plan' Button]
     ClickSave --> LoadingState[Loading: 'Creating installment plan...']
     
-    LoadingState --> SuccessScreen[Success Screen:<br/>'Installment Plan Created'<br/>Green checkmark animation]
+    LoadingState --> SuccessScreen[Success Screen: | 'Installment Plan Created' | Green checkmark animation]
     
-    SuccessScreen --> ActionOptions[Action Options:<br/>- Assign to Students<br/>- Set as Default<br/>- Create Another Plan<br/>- Back to Plans List]
+    SuccessScreen --> ActionOptions[Action Options: | - Assign to Students | - Set as Default | - Create Another Plan | - Back to Plans List]
     
     ActionOptions --> UserChoice{User Selects}
     
     UserChoice -->|Assign| AssignFlow[Bulk Assignment Screen]
-    UserChoice -->|Set Default| SetDefault[Confirmation Dialog<br/>Replace current default?]
+    UserChoice -->|Set Default| SetDefault[Confirmation Dialog | Replace current default?]
     UserChoice -->|Create Another| PlanForm
-    UserChoice -->|Back| UpdatedList[Plans List Updates:<br/>New plan with badge:<br/>'Default' | '0 students assigned']
+    UserChoice -->|Back| UpdatedList[Plans List Updates: | New plan with badge: | 'Default' | '0 students assigned']
     
     UpdatedList --> End([User Continues])
     
@@ -767,3 +767,4 @@ flowchart TD
 - Swipe to navigate between steps
 - Progress dots instead of bar
 - Bottom navigation bar
+
