@@ -29,23 +29,23 @@ flowchart TD
     FeeList --> ClickNew[Click 'Create New Structure' Button]
     ClickNew --> FormScreen[Fee Structure Form Screen]
     
-    FormScreen --> FillForm[Fill Form Fields:; - Grade: 10; - Tuition: $5000; - Lab Fee: $500]
+    FormScreen --> FillForm[Fill Form Fields]
     FillForm --> ValidateForm{Form Validation}
     
-    ValidateForm -->|Invalid| ShowErrors[Show Inline Error Messages; Red borders on invalid fields]
+    ValidateForm -->|Invalid| ShowErrors[Show Inline Error Messages]
     ShowErrors --> FormScreen
     
-    ValidateForm -->|Valid| EnableSubmit[Enable 'Submit for Approval' Button; Button changes from gray to blue]
+    ValidateForm -->|Valid| EnableSubmit[Enable 'Submit for Approval' Button]
     
     EnableSubmit --> ClickSubmit[User Clicks 'Submit for Approval']
-    ClickSubmit --> LoadingState[Loading Spinner Overlay; 'Submitting...']
+    ClickSubmit --> LoadingState[Loading Spinner Overlay]
     
-    LoadingState --> SuccessModal[Success Modal Dialog:; 'Fee Structure Submitted'; Tracking ID: FS-2024-001; Status: Pending Approval]
+    LoadingState --> SuccessModal[Success Modal Dialog]
     
     SuccessModal --> ClickOK[User Clicks 'OK']
-    ClickOK --> UpdatedList[Return to Fee Structure List; New item shows with:; - Yellow 'Pending' badge; - Clock icon; - Disabled 'Edit' button]
+    ClickOK --> UpdatedList[Return to Fee Structure List]
     
-    UpdatedList --> NotifBell[Notification Bell Icon; Shows green dot]
+    UpdatedList --> NotifBell[Notification Bell Icon]
     NotifBell --> End([User Continues Work])
     
     style FormScreen fill:#e3f2fd
@@ -87,50 +87,50 @@ flowchart TD
 
 ```mermaid
 flowchart TD
-    Start([Principal Logs In]) --> Dashboard[Dashboard Screen; Badge shows '3 Pending Approvals']
+    Start([Principal Logs In]) --> Dashboard[Dashboard Screen]
     
-    Dashboard --> ClickBadge[Click Notification Badge; or 'Approvals' Menu Item]
-    ClickBadge --> QueueScreen[Approval Queue Screen; Table with 3 items]
+    Dashboard --> ClickBadge[Click Notification Badge]
+    ClickBadge --> QueueScreen[Approval Queue Screen]
     
-    QueueScreen --> ViewTable[Table Columns:; - ID; - Type; - Submitted By; - Date; - Priority; - Actions]
+    QueueScreen --> ViewTable[Table Columns]
     
-    ViewTable --> ClickRow[Click on Row: FS-2024-001]
-    ClickRow --> DetailPanel[Slide-in Detail Panel; Right side of screen]
+    ViewTable --> ClickRow[Click on Row]
+    ClickRow --> DetailPanel[Slide-in Detail Panel]
     
-    DetailPanel --> ShowDetails[Display:; - Comparison View; - Old vs New Values; - Audit Trail; - Comments Section; - Action Buttons]
+    DetailPanel --> ShowDetails[Display]
     
     ShowDetails --> ReviewData{Principal Reviews Data}
     
     ReviewData -->|Needs Clarification| ClickComment[Click 'Add Comment' Button]
-    ClickComment --> TypeComment[Text Area Expands; Type question]
+    ClickComment --> TypeComment[Text Area Expands]
     TypeComment --> SendComment[Click 'Send Comment']
-    SendComment --> CommentSent[Comment Added to Thread; Maker receives notification]
+    SendComment --> CommentSent[Comment Added to Thread]
     CommentSent --> QueueScreen
     
-    ReviewData -->|Data Looks Good| ClickApprove[Click 'Approve' Button; Green button]
+    ReviewData -->|Data Looks Good| ClickApprove[Click 'Approve' Button]
     
-    ClickApprove --> ConfirmDialog[Confirmation Dialog:; 'Approve Fee Structure FS-2024-001?'; Warning: This action cannot be undone]
+    ClickApprove --> ConfirmDialog[Confirmation Dialog]
     
     ConfirmDialog --> ClickCancel[Click 'Cancel']
     ClickCancel --> DetailPanel
     
     ConfirmDialog --> ClickConfirm[Click 'Confirm Approval']
-    ClickConfirm --> ProcessingState[Loading Spinner; 'Processing approval...']
+    ClickConfirm --> ProcessingState[Loading Spinner]
     
-    ProcessingState --> SuccessToast[Success Toast Notification:; 'Fee Structure Approved'; Green banner at top]
+    ProcessingState --> SuccessToast[Success Toast Notification]
     
-    SuccessToast --> UpdateQueue[Queue Screen Updates:; - Item removed from list; - Badge count: 3 → 2; - Smooth fade-out animation]
+    SuccessToast --> UpdateQueue[Queue Screen Updates]
     
     UpdateQueue --> End([Principal Continues Work])
     
-    ReviewData -->|Data Has Issues| ClickReject[Click 'Reject' Button; Red button]
-    ClickReject --> RejectDialog[Rejection Dialog:; Required: Reason for rejection; Text area for comments]
+    ReviewData -->|Data Has Issues| ClickReject[Click 'Reject' Button]
+    ClickReject --> RejectDialog[Rejection Dialog]
     
-    RejectDialog --> TypeReason[Principal Types:; 'Please verify amounts; against policy document']
+    RejectDialog --> TypeReason[Principal Types]
     TypeReason --> ClickRejectConfirm[Click 'Confirm Rejection']
-    ClickRejectConfirm --> RejectProcessing[Loading Spinner; 'Processing rejection...']
+    ClickRejectConfirm --> RejectProcessing[Loading Spinner]
     
-    RejectProcessing --> RejectToast[Warning Toast:; 'Request Rejected and Returned'; Orange banner]
+    RejectProcessing --> RejectToast[Warning Toast]
     
     RejectToast --> UpdateQueue
     
@@ -177,43 +177,43 @@ flowchart TD
 flowchart TD
     Start([Clerk Logs In]) --> Dashboard[Dashboard Screen]
     
-    Dashboard --> AlertBanner[Red Alert Banner at Top:; '1 Request Returned for Correction'; Click to view]
+    Dashboard --> AlertBanner[Red Alert Banner at Top]
     
     AlertBanner --> ClickAlert[Click Alert Banner]
-    ClickAlert --> ReturnedList[My Submissions Screen; Filter: 'Returned Items']
+    ClickAlert --> ReturnedList[My Submissions Screen]
     
-    ReturnedList --> ShowItem[Item Card:; FW-2024-042; Red 'Returned' badge; Principal's comment preview]
+    ReturnedList --> ShowItem[Item Card]
     
     ShowItem --> ClickItem[Click on Item Card]
-    ClickItem --> DetailScreen[Request Detail Screen; Read-only mode]
+    ClickItem --> DetailScreen[Request Detail Screen]
     
-    DetailScreen --> ShowComment[Comment Thread Visible:; Principal: 'Missing Medical Cert'; Highlighted in yellow box]
+    DetailScreen --> ShowComment[Comment Thread Visible]
     
     ShowComment --> ClickEdit[Click 'Edit & Resubmit' Button]
-    ClickEdit --> EditMode[Form Switches to Edit Mode; Only certain fields editable]
+    ClickEdit --> EditMode[Form Switches to Edit Mode]
     
-    EditMode --> ShowUpload[Upload Section Highlighted:; 'Attachments Required'; Pulsing blue border]
+    EditMode --> ShowUpload[Upload Section Highlighted]
     
     ShowUpload --> ClickUpload[Click 'Upload Document' Button]
     ClickUpload --> FileDialog[System File Picker Opens]
     
-    FileDialog --> SelectFile[User Selects:; Medical_Certificate.pdf]
-    SelectFile --> UploadProgress[Progress Bar:; 0% → 100%; 'Uploading...']
+    FileDialog --> SelectFile[User Selects]
+    SelectFile --> UploadProgress[Progress Bar]
     
-    UploadProgress --> FilePreview[File Preview Card:; - Thumbnail icon; - Filename; - Size: 250 KB; - Remove button]
+    UploadProgress --> FilePreview[File Preview Card]
     
-    FilePreview --> EnableResubmit[Resubmit Button Enabled; Changes from gray to blue]
+    FilePreview --> EnableResubmit[Resubmit Button Enabled]
     
     EnableResubmit --> ClickResubmit[Click 'Resubmit for Approval']
-    ClickResubmit --> ConfirmResubmit[Confirmation Modal:; 'Ready to resubmit?'; Shows what changed]
+    ClickResubmit --> ConfirmResubmit[Confirmation Modal]
     
     ConfirmResubmit --> ClickConfirm[Click 'Yes, Resubmit']
-    ClickConfirm --> LoadingState[Loading Overlay; 'Resubmitting...']
+    ClickConfirm --> LoadingState[Loading Overlay]
     
-    LoadingState --> SuccessModal[Success Modal:; 'Request Resubmitted'; New status: Pending Review; Priority: High]
+    LoadingState --> SuccessModal[Success Modal]
     
     SuccessModal --> ClickOK[Click 'OK']
-    ClickOK --> UpdatedStatus[Return to My Submissions; Item now shows:; - Yellow 'Pending' badge; - 'Resubmitted' tag; - Updated timestamp]
+    ClickOK --> UpdatedStatus[Return to My Submissions]
     
     UpdatedStatus --> End([Clerk Continues Work])
     
@@ -262,24 +262,24 @@ flowchart TD
 flowchart TD
     Start([User Opens Waiver Form]) --> FormScreen[Fine Waiver Form]
     
-    FormScreen --> EnterAmount[Enter Amount: $5.00]
-    EnterAmount --> ShowHint[Helper Text Appears:; 'Amounts under $10 are; auto-approved instantly']
+    FormScreen --> EnterAmount[Enter Amount]
+    EnterAmount --> ShowHint[Helper Text Appears]
     
-    ShowHint --> EnterReason[Enter Reason:; 'Rounding error']
+    ShowHint --> EnterReason[Enter Reason]
     EnterReason --> ClickSubmit[Click 'Submit' Button]
     
-    ClickSubmit --> QuickProcess[Brief Loading:; 0.5 seconds; Spinner]
+    ClickSubmit --> QuickProcess[Brief Loading]
     
-    QuickProcess --> InstantSuccess[Success Animation:; Green checkmark; Confetti effect]
+    QuickProcess --> InstantSuccess[Success Animation]
     
-    InstantSuccess --> SuccessBanner[Success Banner:; 'Waiver Approved Instantly'; 'No manual review required'; Rule: Auto-approval policy]
+    InstantSuccess --> SuccessBanner[Success Banner]
     
-    SuccessBanner --> ShowReceipt[Receipt Summary:; - Waiver ID; - Amount: $5.00; - Status: Approved; - Approved by: System; - Download PDF button]
+    SuccessBanner --> ShowReceipt[Receipt Summary]
     
     ShowReceipt --> UserChoice{User Action}
     
     UserChoice -->|Download| ClickDownload[Click 'Download Receipt']
-    ClickDownload --> PDFDownload[PDF Downloads; Browser notification]
+    ClickDownload --> PDFDownload[PDF Downloads]
     PDFDownload --> End([User Continues])
     
     UserChoice -->|New Request| ClickNew[Click 'Create Another']
@@ -289,17 +289,17 @@ flowchart TD
     ClickClose --> End
     
     Start --> FormScreen2[Fine Waiver Form]
-    FormScreen2 --> EnterLarge[Enter Amount: $150.00]
-    EnterLarge --> ShowWarning[Warning Text Appears:; 'This amount requires; Principal approval'; Orange info icon]
+    FormScreen2 --> EnterLarge[Enter Amount]
+    EnterLarge --> ShowWarning[Warning Text Appears]
     
-    ShowWarning --> EnterReason2[Enter Reason:; 'Financial hardship']
+    ShowWarning --> EnterReason2[Enter Reason]
     EnterReason2 --> ClickSubmit2[Click 'Submit' Button]
     
-    ClickSubmit2 --> NormalProcess[Standard Loading:; 2 seconds; Spinner]
+    ClickSubmit2 --> NormalProcess[Standard Loading]
     
-    NormalProcess --> PendingBanner[Info Banner:; 'Request Submitted'; 'Awaiting Principal Approval'; Blue background]
+    NormalProcess --> PendingBanner[Info Banner]
     
-    PendingBanner --> ShowTracking[Tracking Information:; - Request ID; - Estimated review time: 24h; - Status: Pending; - You'll be notified]
+    PendingBanner --> ShowTracking[Tracking Information]
     
     ShowTracking --> End
     
@@ -887,13 +887,8 @@ sequenceDiagram
 {
   "rule_id": "AR-001",
   "entity_type": "FINE_WAIVER",
-  "conditions": [
-    {
-      "field": "amount",
-      "operator": "LESS_THAN",
-      "value": 10.00
-    }
-  ],
+  "conditions": [{
+      "field"],
   "action": "AUTO_APPROVE",
   "created_by": "admin@school.edu",
   "effective_from": "2024-01-01",
