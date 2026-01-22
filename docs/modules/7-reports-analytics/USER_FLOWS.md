@@ -416,7 +416,7 @@ flowchart TD
     
     AddWidget --> WidgetLibrary[Widget Library]
     WidgetLibrary --> SelectNewWidget[Select Widget]
-    SelectNewWidget --> AddToD ashboard[Add to Dashboard]
+    SelectNewWidget --> AddToDashboard[Add to Dashboard]
     AddToDashboard --> CustomizeMode
     
     RemoveWidget --> ConfirmRemove[Confirm Removal]
