@@ -149,7 +149,7 @@ flowchart TD
     MoveToSelected --> EnterAmount[Amount Input Field Appears]
     EnterAmount --> AddMore[Add More Fee Heads]
     
-    AddMore --> ShowTotal[Total Calculation (Auto)]
+    AddMore --> ShowTotal[Total Calculation]
     
     ShowTotal --> ValidateStep2{Validate Step 2:; At least 1 fee head?}
     
@@ -241,7 +241,7 @@ flowchart TD
     SearchStudent --> TypeSearch[Type Student Name]
     TypeSearch --> ShowResults[Dropdown Shows Results]
     
-    ShowResults --> SelectStudent[Click on 'Sarah Johnson (Class 10-A)']
+    ShowResults --> SelectStudent[Click on 'Sarah Johnson ']
     SelectStudent --> LoadStudent[Loading Spinner]
     
     LoadStudent --> StudentCard[Student Info Card Appears]
@@ -409,7 +409,7 @@ flowchart TD
     ActivateChoice -->|Save as Draft| ClickDraft[Click 'Save as Draft']
     ClickDraft --> DraftSuccess[Success Toast]
     
-    ActivateChoice -->|Activate| ClickActivate[Click 'Save & Activate']
+    ActivateChoice -->|Activate| ClickActivate[Click 'Save and Activate']
     ClickActivate --> ConfirmActivate[Confirmation Dialog]
     
     ConfirmActivate --> ClickConfirmActivate[Click 'Activate']

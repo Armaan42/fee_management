@@ -189,7 +189,7 @@ flowchart TD
     
     DetailScreen --> ShowComment[Comment Thread Visible]
     
-    ShowComment --> ClickEdit[Click 'Edit & Resubmit' Button]
+    ShowComment --> ClickEdit[Click 'Edit and Resubmit' Button]
     ClickEdit --> EditMode[Form Switches to Edit Mode]
     
     EditMode --> ShowUpload[Upload Section Highlighted]
@@ -887,8 +887,7 @@ sequenceDiagram
 {
   "rule_id": "AR-001",
   "entity_type": "FINE_WAIVER",
-  "conditions": [{
-      "field"],
+  "conditions": [{ "field"],
   "action": "AUTO_APPROVE",
   "created_by": "admin@school.edu",
   "effective_from": "2024-01-01",
