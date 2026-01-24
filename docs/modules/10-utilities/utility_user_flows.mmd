@@ -1,0 +1,87 @@
+flowchart TD
+    Start([Admin on Dashboard]) --> ClickStudents[Click 'Student Fee Assignment' Menu]
+    ClickStudents --> AssignmentPage[Fee Assignment Screen]
+    
+    AssignmentPage --> SelectMode[Select 'Individual Assignment' Tab]
+    SelectMode --> SearchStudent[Student Search Section]
+    
+    SearchStudent --> TypeSearch[Type Student Name]
+    TypeSearch --> ShowResults[Dropdown Shows Results]
+    
+    ShowResults --> SelectStudent[Click on 'Sarah Johnson ']
+    SelectStudent --> LoadStudent[Loading Spinner]
+    
+    LoadStudent --> StudentCard[Student Info Card Appears]
+    
+    StudentCard --> CheckStatus{Fee Already Assigned?}
+    
+    CheckStatus -->|Yes| ShowWarning[Warning Banner]
+    ShowWarning --> WarningChoice{User Choice}
+    
+    WarningChoice -->|View| ViewExisting[View Current Fee Structure]
+    WarningChoice -->|Modify| ModifyFlow[Go to Modification Flow]
+    WarningChoice -->|Reassign| ConfirmReassign[Confirmation Dialog]
+    
+    ConfirmReassign --> ClickCancel[Click 'Cancel']
+    ClickCancel --> AssignmentPage
+    
+    ConfirmReassign --> ClickConfirm[Click 'Yes, Replace']
+    ClickConfirm --> SelectTemplate
+    
+    CheckStatus -->|No| SelectTemplate[Template Selection Section]
+    
+    SelectTemplate --> ShowTemplates[Dropdown Shows]
+    
+    ShowTemplates --> ClickRecommended[Click Recommended]
+    
+    ClickRecommended --> LoadTemplate[Loading Template Details...]
+    LoadTemplate --> ShowPreview[Template Preview Card]
+    
+    ShowPreview --> CheckConcession{Apply Concession?}
+    
+    CheckConcession -->|Yes| ClickConcession[Click 'Add Concession' Button]
+    ClickConcession --> ConcessionModal[Concession Selection Modal]
+    
+    ConcessionModal --> ShowEligible[Auto-Check Eligibility]
+    
+    ShowEligible --> SelectConcession[Select]
+    SelectConcession --> ApplyConcession[Click 'Apply']
+    
+    ApplyConcession --> UpdatePreview[Preview Updates]
+    
+    CheckConcession -->|No| SelectInstallment[Installment Plan Section]
+    UpdatePreview --> SelectInstallment
+    
+    SelectInstallment --> ShowPlans[Available Plans]
+    
+    ShowPlans --> ClickPlan[Select]
+    ClickPlan --> ShowSchedule[Payment Schedule Table]
+    
+    ShowSchedule --> FinalReview[Final Review Section]
+    
+    FinalReview --> ClickAssign[Click 'Assign Fee Structure' Button]
+    
+    ClickAssign --> ConfirmDialog[Confirmation Dialog]
+    
+    ConfirmDialog --> ClickConfirmAssign[Click 'Confirm']
+    ClickConfirmAssign --> ProcessingState[Processing Overlay]
+    
+    ProcessingState --> SuccessAnimation[Success Animation]
+    
+    SuccessAnimation --> SuccessMessage[Success Screen]
+    
+    SuccessMessage --> ActionButtons[Action Options]
+    
+    ActionButtons --> UserAction{User Selects}
+    
+    UserAction -->|Print| PrintReceipt[Open Print Dialog]
+    UserAction -->|Send| SendNotif[Send Notification Screen]
+    UserAction -->|Assign Another| SearchStudent
+    UserAction -->|View Ledger| StudentLedger[Student Ledger Page]
+    UserAction -->|Done| End([User Continues])
+    
+    style StudentCard fill:#e3f2fd
+    style ShowPreview fill:#fff9c4
+    style UpdatePreview fill:#c8e6c9
+    style SuccessAnimation fill:#c8e6c9
+    style ShowWarning fill:#ffe0b2
