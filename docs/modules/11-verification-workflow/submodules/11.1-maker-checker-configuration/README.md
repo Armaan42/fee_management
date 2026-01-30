@@ -34,6 +34,15 @@ This configuration is highly granular, allowing different policies for different
         - Emergency Contact: **Auto-Approve**.
     3. Result: Clerks can update phone numbers instantly, but cannot change names without oversight.
 
+### Scenario 3: Financial Concessions (High Risk)
+- **Requirement**: Waiving a fine or processing a refund requires strict control.
+- **Setup**:
+    1. Select Module: **Fine Management** -> Action: **Manual Waiver**.
+    2. Set Levels: **1 (Principal)**.
+    3. Select Module: **Fee Collection** -> Action: **Refund Processing**.
+    4. Set Levels: **2 (Accountant -> Principal)**.
+
+
 ### Scenario 3: Temporary Delegation
 - **Requirement**: The Principal is on vacation for 2 weeks.
 - **Setup**:
